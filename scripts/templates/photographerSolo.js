@@ -1,16 +1,14 @@
 /** @format */
 
-class PhotographersCard {
+class PhotographerSolo {
   constructor(photographers) {
     this._photographers = photographers;
   }
 
-  createPhotographersCard() {
-    const section = document.createElement("div");
-    section.classList.add("container-card");
-    const dateUnit = "jour";
-    const moneyUnit = "€";
-    const photographersCard = `
+  createPhotographerSolo() {
+    const sectionSolo = document.createElement("div");
+    sectionSolo.classList.add("container-card");
+    const photographerSolo = `
     <article>
       <a href="photographer.html?id=${this._photographers.id}">
         <img class="photographer_img" src="${this._photographers.portrait}" alt="${this._photographers.name}"/>
@@ -23,7 +21,8 @@ class PhotographersCard {
       <p class="photographer_price">${this._photographers.price}${moneyUnit}/${dateUnit}</p>
     </article>`;
 
-    section.innerHTML = photographersCard;
-    return section;
-  }
+    sectionSolo.innerHTML = photographerSolo;
+      return sectionSolo;
+    }
 }
+console.log(PhotographerSolo);
