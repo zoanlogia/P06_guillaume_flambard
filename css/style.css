@@ -26,8 +26,8 @@ header {
 }
 
 header a {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 header h1 {
@@ -39,24 +39,17 @@ header h1 {
 }
 
 .photographer_section {
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 40em) {
-  .photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    justify-content: center;
-    align-content: center;
-    margin: 100px 0;
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  justify-content: center;
+  align-content: center;
+  margin: 100px 0;
+  text-align: center;
 }
 
 .photographer_section a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .photographer_section img {
