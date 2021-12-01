@@ -1,11 +1,10 @@
-/** @format */
-
-class PhotographersCard {
+export class PhotographersCard {
   constructor(photographers) {
     this._photographers = photographers;
   }
 
   createPhotographersCard() {
+    console.log('coucou');
     const section = document.createElement("div");
     section.classList.add("container-card");
     const dateUnit = "jour";

@@ -1,4 +1,4 @@
-class Photographers {
+export class Photographers {
     constructor(data) {
         this._name = data.name
         this._id = data.id
@@ -36,6 +36,6 @@ class Photographers {
     get portrait() {
         return `/assets/Photographers/${this._portrait}`
     }
-    
+
 }
 
