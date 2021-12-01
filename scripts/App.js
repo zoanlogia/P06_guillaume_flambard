@@ -21,10 +21,10 @@ class App {
         console.log(photographers);
       });
 
-    photographersData.forEach((photographers) => {
-      const Template = new PhotographerCard(photographers);
-      this.$section.appendChild(Template.createPhotographerCard());
-    });
+    // photographersData.forEach((photographers) => {
+    //   const Template = new PhotographerCard(photographers);
+    //   this.$photographerSection.appendChild(Template.createPhotographerCard());
+    // });
   }
 }
 
