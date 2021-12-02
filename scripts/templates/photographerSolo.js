@@ -1,6 +1,6 @@
-export class PhotographerSolo {
-  constructor(photographers, id) {
-    this._photographers = photographers;
+export class PhotographerSolo { 
+  constructor(Photographers, id) {
+    this._photographers = Photographers;
     this._photographersID = id;
   }
 

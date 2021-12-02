@@ -1,6 +1,4 @@
 import { PhotographersApi } from "../api/Api.js";
-// import { Photographers } from "../models/Photographers.js";
-// import { PhotographerSolo } from "../templates/photographerSolo.js";
 
 class Photographer {
   constructor() {
@@ -19,12 +17,6 @@ class Photographer {
     const photographerData = await this.photographersApi.getOnePhotographer(id);
 
     console.log(photographerData);
-
-    // const Template = new PhotographerSolo(photographerData);
-    // this.$photographerSoloSection.appendChild(
-    //   Template.createPhotographerSolo(),
-    // );
-
   }
 }
 
