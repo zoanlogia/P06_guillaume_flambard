@@ -1,5 +1,3 @@
-/** @format */
-
 class Api {
   /**
    * @param {string} url
@@ -25,11 +23,13 @@ class Api {
       info: [],
       medias: [],
     };
+    // console.log(detail);
 
     for (let i = 0; i < photographerList.length; i++) {
       const info = photographerList[i];
       if (info.id == id) {
         detail.info = info;
+        // console.log(info);
       }
     }
 
@@ -37,6 +37,7 @@ class Api {
       const medias = mediaList[i];
       if (medias.photographerId == id) {
         detail.medias.push(medias);
+        // console.log(medias);
       }
     }
     return detail;

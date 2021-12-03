@@ -9,14 +9,10 @@ class Photographer {
   }
 
   async init() {
-
     // récupérer les id URL
     const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id')
-
+    const id = urlParams.get("id");
     const photographerData = await this.photographersApi.getOnePhotographer(id);
-
-    console.log(photographerData);
   }
 }
 

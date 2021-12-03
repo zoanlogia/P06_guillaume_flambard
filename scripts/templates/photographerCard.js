@@ -4,7 +4,6 @@ export class PhotographersCard {
   }
 
   createPhotographersCard() {
-    console.log('coucou');
     const section = document.createElement("div");
     section.classList.add("container-card");
     const dateUnit = "jour";

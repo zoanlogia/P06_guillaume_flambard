@@ -2,7 +2,6 @@ import { PhotographersApi } from "../api/Api.js";
 import { Photographers } from "../models/Photographers.js";
 import { PhotographersCard } from "../templates/photographerCard.js";
 
-
 class App {
   constructor() {
     this.$photographersSection = document.querySelector(
