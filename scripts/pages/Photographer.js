@@ -18,10 +18,8 @@ class Photographer {
 
       const TemplateSolo = new PhotographerSolo(onePhotographerData)
       this.$photographerSoloSection.appendChild(
-        TemplateSolo.createPhotographerSolo(),
+        TemplateSolo.createPhotographerSolo()
       );
-      
-      console.log(TemplateSolo);
     }
   }
   

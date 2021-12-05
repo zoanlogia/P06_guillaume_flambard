@@ -1,11 +1,9 @@
 export class PhotographerSolo {
-  constructor(Photographer, id) {
-    this._photographers = Photographer;
-    this._photographersID = id;
+  constructor(photographers, id) {
+    this._photographers = photographers;
   }
 
   createPhotographerSolo() {
-    console.log(this._photographersID);
     const sectionSolo = document.createElement("div");
     sectionSolo.classList.add("container-card");
     const photographerSolo = `
