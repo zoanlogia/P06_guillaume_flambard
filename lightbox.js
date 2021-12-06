@@ -4,7 +4,7 @@ import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js'
  * @property {string[]} images chemin des images la lightbox
  * @property {string} url
  */
-class Lightbox {
+export class Lightbox {
   static init() {
     const links = Array.from(
       document.querySelectorAll(

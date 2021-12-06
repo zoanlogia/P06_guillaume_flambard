@@ -88,3 +88,28 @@ header h1 {
   height: 250px;
   width: 250px;
 }
+
+/* menu caché -- accessiblité  */
+
+.a11y-nav {
+    position: absolute;
+    top: -10em;
+    z-index: 100;
+    width: 100%;
+}
+
+.a11y-nav a {
+    background: #fff;
+    font-weight: 700;
+    position:absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.a11y-nav a:focus,
+.a11y-nav a:hover {
+    top: 10em;
+    text-decoration: none;
+}
