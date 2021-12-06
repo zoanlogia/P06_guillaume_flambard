@@ -1,7 +1,7 @@
-/** @format */
+import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js'
 /**
  * @property {HTMLElement} element
- * @property {string[]} images
+ * @property {string[]} images chemin des images la lightbox
  * @property {string} url
  */
 class Lightbox {
@@ -11,9 +11,8 @@ class Lightbox {
         'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"]',
       ),
     );
-    const gallery = links.map((link) => link.getAttribute("href"));
-    debugger;
-    links.forEach((link) =>
+    const gallery = links.map(link => link.getAttribute("href"))
+    links.forEach(link =>
       link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(e.currentTarget.getAttribute("href"), gallery);
@@ -23,13 +22,15 @@ class Lightbox {
   /**
    *
    * @param {string} url URL de l'image
-   * @param {string[]} images
+   * @param {string[]} images chemin des images la lightbox
    */
-  constructor(url, gallery) {
+  constructor(url, images) {
     this.element = this.buildDOM(url);
+    this.images = images
     this.loadImage(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
+    disableBodyScroll(this.element);
     document.addEventListener("keyup", this.onKeyUp);
   }
 
@@ -76,6 +77,7 @@ class Lightbox {
   close(e) {
     e.preventDefault();
     this.element.classList.add("fadeOut");
+    enableBodyScroll(this.element)
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
     }, 500);
