@@ -6,8 +6,13 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
+  position: relative;
   margin: 0;
   padding: 0;
 }
