@@ -105,10 +105,12 @@ header {
 #contact_modal {
   display: none; }
 
-.photograph-header {
+.presentation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #fafafa;
-  height: 300px;
-  margin: 0 100px; }
+  height: 300px; }
 
 .contact_button {
   font-size: 20px;
