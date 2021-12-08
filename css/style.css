@@ -1,5 +1,22 @@
 @charset "UTF-8";
-/** @format */
+::-webkit-scrollbar {
+  width: 7px; }
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  padding: 1px; }
+
+::-webkit-scrollbar-thumb {
+  background: #9ca2b0;
+  border-radius: 4px; }
+
+.lightbox::-webkit-scrollbar-track {
+  background: black; }
+
+.lightbox::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,6 +49,9 @@ body {
 .smalltitle {
   color: #757575;
   font-size: 0.8rem; }
+
+.show {
+  display: block; }
 
 /** @format */
 header {
@@ -141,15 +161,23 @@ header {
     margin: 0 2em;
     background-color: #901c1c;
     color: #fff;
-    border-radius: 5px; }
+    border-radius: 5px;
+    position: relative;
+    display: inline-block; }
     .select ul li {
+      display: none;
       padding: .5em;
       margin: 0 .5em; }
+      .select ul li i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%); }
       .select ul li a {
         text-decoration: none;
         color: white; }
-    .select ul li:nth-child(-n+2) {
-      border-bottom: 1px solid white; }
+    .select ul li:first-child {
+      display: block; }
 
 .contact_button {
   font-size: 20px;
@@ -162,24 +190,6 @@ header {
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer; }
-
-::-webkit-scrollbar {
-  width: 7px; }
-
-::-webkit-scrollbar-track {
-  background: #fff;
-  padding: 1px; }
-
-::-webkit-scrollbar-thumb {
-  background: #9ca2b0;
-  border-radius: 4px; }
-
-.lightbox::-webkit-scrollbar-track {
-  background: black; }
-
-.lightbox::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px; }
 
 .grid {
   padding: 16px;

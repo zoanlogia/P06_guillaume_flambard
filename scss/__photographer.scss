@@ -32,20 +32,33 @@
     background-color: #901c1c;
     color: #fff;
     border-radius: 5px;
+    position: relative;
+    display: inline-block;
     
     & li {
+      display: none;
       padding: .5em;
       margin: 0 .5em;
 
+      i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+      }
+      
       & a {
         text-decoration: none;
         color: white;
       }
     }
-
-    & li:nth-child(-n+2) {
-      border-bottom: 1px solid white;
+    & li:first-child{
+      display: block;
     }
+
+    // & li:nth-child(-n+2) {
+    //   border-bottom: 1px solid white;
+    // }
   }
 }
 

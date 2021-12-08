@@ -46,29 +46,14 @@
         <div id="select" class="select">
           <p>Trier par</p>
           <ul class="dropdown">
-            <li><a href="#">Popularité</a></li>
+            <li>
+              <a class="dropBtn" href="#">Popularité</a
+              ><i class="fa fa-angle-up"></i><i class="fa fa-angle-down"></i>
+            </li>
             <li><a href="#">Date</a></li>
             <li><a href="#">Titre</a></li>
           </ul>
         </div>
-        <script>
-          document.getElementById('select').addEventListener("click", (event) => {
-            $(this).toggleClass("active");
-            return false;
-          });
-
-          //...
-
-          $(function () {
-            var select = new DropDown($("#select"));
-
-            $(document).click(function () {
-              // all dropdowns
-              $(".select").removeClass("active");
-            });
-          });
-
-        </script>
         <div class="grid">
           <a href="assets/Ellie Rose/Architecture_Connected_Curves.jpg">
             <img
