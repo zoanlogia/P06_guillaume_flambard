@@ -68,8 +68,8 @@ header {
   .photographer_section a {
     text-decoration: none; }
   .photographer_section img {
-    border-radius: 50%;
     object-fit: cover;
+    border-radius: 50%;
     width: 100%; }
   .photographer_section article {
     justify-self: center;
@@ -126,13 +126,16 @@ header {
   height: 300px;
   padding: 0 5em; }
   .presentation img {
-    width: 150px;
-    height: 150px;
     object-fit: cover;
-    border-radius: 50%; }
+    border-radius: 50%;
+    width: 150px;
+    height: 150px; }
 
 .select {
-  display: flex; }
+  display: flex;
+  position: relative;
+  outline: none;
+  cursor: pointer; }
   .select ul {
     list-style: none;
     margin: 0 2em;
@@ -142,7 +145,10 @@ header {
     .select ul li {
       padding: .5em;
       margin: 0 .5em; }
-    .select ul li:nth-child(-n + 2) {
+      .select ul li a {
+        text-decoration: none;
+        color: white; }
+    .select ul li:nth-child(-n+2) {
       border-bottom: 1px solid white; }
 
 .contact_button {

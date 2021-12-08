@@ -14,15 +14,17 @@
   padding: 0 5em;
 
   & img {
+   @include imgPhoto;
     width: 150px;
     height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
   }
 }
 
 .select {
   display: flex;
+  position: relative;
+  outline: none;
+  cursor: pointer;
   
   & ul {
     list-style: none;
@@ -34,9 +36,14 @@
     & li {
       padding: .5em;
       margin: 0 .5em;
+
+      & a {
+        text-decoration: none;
+        color: white;
+      }
     }
 
-    & li:nth-child(-n + 2) {
+    & li:nth-child(-n+2) {
       border-bottom: 1px solid white;
     }
   }

@@ -23,8 +23,7 @@
   }
 
   & img {
-    border-radius: 50%;
-    object-fit: cover;
+    @include imgPhoto;
     width: 100%;
   }
 

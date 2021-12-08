@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,14 +43,32 @@
           <img src="assets/Photographers/MimiKeel.jpg" alt="Mimi kill" />
         </section>
 
-        <div class="select">
+        <div id="select" class="select">
           <p>Trier par</p>
-          <ul>
-            <li>Popularité</li>
-            <li>Date</li>
-            <li>Titre</li>
+          <ul class="dropdown">
+            <li><a href="#">Popularité</a></li>
+            <li><a href="#">Date</a></li>
+            <li><a href="#">Titre</a></li>
           </ul>
         </div>
+        <script>
+          document.getElementById('select').addEventListener("click", (event) => {
+            $(this).toggleClass("active");
+            return false;
+          });
+
+          //...
+
+          $(function () {
+            var select = new DropDown($("#select"));
+
+            $(document).click(function () {
+              // all dropdowns
+              $(".select").removeClass("active");
+            });
+          });
+
+        </script>
         <div class="grid">
           <a href="assets/Ellie Rose/Architecture_Connected_Curves.jpg">
             <img
