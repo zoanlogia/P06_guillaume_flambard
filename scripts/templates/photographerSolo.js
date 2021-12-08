@@ -1,6 +1,7 @@
 export class PhotographerSolo {
-  constructor(photographers, id) {
-    this._photographers = photographers;
+  constructor(photographer) {
+    this._photographer.info = photographer;
+    this._photographer.media = photographer;
   }
 
   createPhotographerSolo() {
@@ -8,15 +9,15 @@ export class PhotographerSolo {
     sectionSolo.classList.add("container-card");
     const photographerSolo = `
     <article>
-      <a href="photographer.html?id=${this._photographers.id}">
-        <img class="photographer_img" src="${this._photographers.portrait}" alt="${this._photographers.name}"/>
-          <h2>${this._photographers.name}</h2>
+      <a href="photographer.html?id=${this._photographer.info.id}">
+        <img class="photographer_img" src="${this._photographer.portrait}" alt="${this._photographer.name}"/>
+          <h2>${this._photographer.name}</h2>
       </a>
-      <p class="photographer_city">${this._photographers.city}, ${this._photographers.country}</p>
+      <p class="photographer_city">${this._photographer.city}, ${this._photographer.country}</p>
       <a href="#">
-        <p class="photographer_tagline">${this._photographers.tagline}</p>
+        <p class="photographer_tagline">${this._photographer.tagline}</p>
       </a>
-      <p class="photographer_price">${this._photographers.price}</p>
+      <p class="photographer_price">${this._photographer.price}</p>
     </article>`;
 
     sectionSolo.innerHTML = photographerSolo;
