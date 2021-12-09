@@ -1,24 +1,31 @@
-/* menu caché -- accessiblité  */
+/**
+ * /* menu caché -- accessiblité
+ *
+ * @format
+ */
 
 .a11y-nav {
-    position: absolute;
-    top: -10em;
-    z-index: 100;
-    width: 100%;
-    
+  position: absolute;
+  top: -10em;
+  z-index: 100;
+  width: 100%;
+
+  & li {
     & a {
-        background: #fff;
-        font-weight: 700;
-        position:absolute;
-        left: 0;
-        right: 0;
-        text-align: center;
-        padding: 0.5em 0;
+      color: #fff;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 0.5em 0;
+      background-color: #901c1c;
+      text-decoration: none;
     }
-    
+
     & a:focus,
     & a:hover {
-        top: 10em;
-        text-decoration: none;
+      top: 10em;
     }
+  }
 }

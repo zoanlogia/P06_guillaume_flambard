@@ -29,7 +29,8 @@ body {
   font-family: "DM Sans", sans-serif;
   position: relative;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: auto; }
 
 .container {
   margin: 0 100px; }
@@ -114,24 +115,29 @@ header {
     color: #757575;
     font-size: 0.8rem; }
 
-/* menu caché -- accessiblité  */
+/**
+ * /* menu caché -- accessiblité
+ *
+ * @format
+ */
 .a11y-nav {
   position: absolute;
   top: -10em;
   z-index: 100;
   width: 100%; }
-  .a11y-nav a {
-    background: #fff;
+  .a11y-nav li a {
+    color: #fff;
     font-weight: 700;
     position: absolute;
     left: 0;
     right: 0;
     text-align: center;
-    padding: 0.5em 0; }
-  .a11y-nav a:focus,
-  .a11y-nav a:hover {
-    top: 10em;
+    padding: 0.5em 0;
+    background-color: #901c1c;
     text-decoration: none; }
+  .a11y-nav li a:focus,
+  .a11y-nav li a:hover {
+    top: 10em; }
 
 /** @format */
 #contact_modal {
@@ -145,11 +151,24 @@ header {
   background-color: #fafafa;
   height: 300px;
   padding: 0 5em; }
+  .presentation h1 {
+    color: #d3573c;
+    font-weight: 400;
+    font-size: 64px; }
+  .presentation h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #901c1c; }
+  .presentation p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 1em 0; }
   .presentation img {
     object-fit: cover;
     border-radius: 50%;
-    width: 150px;
-    height: 150px; }
+    width: 220px;
+    height: 220px;
+    object-fit: cover; }
 
 .select {
   display: flex;
@@ -166,8 +185,8 @@ header {
     display: inline-block; }
     .select ul li {
       display: none;
-      padding: .5em;
-      margin: 0 .5em; }
+      padding: 0.5em;
+      margin: 0 0.5em; }
       .select ul li i {
         position: absolute;
         top: 50%;
@@ -178,6 +197,41 @@ header {
         color: white; }
     .select ul li:first-child {
       display: block; }
+
+.gallery {
+  overflow-y: hidden;
+  padding-bottom: 5em; }
+  .gallery__img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; }
+    .gallery__img a {
+      text-decoration: none;
+      color: #901c1c;
+      width: 350px;
+      height: 300px;
+      margin: 3em 0; }
+      .gallery__img a img {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        object-fit: cover; }
+    .gallery__img__desc {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      position: relative; }
+      .gallery__img__desc i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0; }
+      .gallery__img__desc span {
+        position: absolute;
+        right: 1.5em;
+        top: -1.5px;
+        bottom: 0; }
 
 .contact_button {
   font-size: 20px;
@@ -191,17 +245,7 @@ header {
   border-radius: 5px;
   cursor: pointer; }
 
-.grid {
-  padding: 16px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, 20em);
-  grid-gap: 5em; }
-  .grid img {
-    object-fit: cover;
-    width: 350px;
-    height: 300px; }
-
+/** @format */
 .lightbox {
   position: fixed;
   top: 0;
@@ -212,19 +256,16 @@ header {
   z-index: 10;
   animation: lightboxIn 0.5s;
   transition: opacity 0.3s; }
-  .lightbox img {
-    height: auto;
-    width: 100%;
-    animation: lightboxIn 0.5s; }
   .lightbox .fadeOut {
     opacity: 0; }
   .lightbox__next, .lightbox__prev {
+    background: white;
+    color: #901C1C;
     position: fixed;
     top: 0;
     right: 0;
-    margin-top: -14px;
+    bottom: 0;
     z-index: 11;
-    opacity: 0.5;
     cursor: pointer;
     border: none;
     width: 50px;
@@ -239,15 +280,16 @@ header {
     left: 0;
     /* transform: rotate(180deg); */ }
   .lightbox__close {
+    background-color: transparent;
+    color: #901C1C;
     border: none;
     position: fixed;
     top: 20px;
-    right: 20px;
-    opacity: 0.5;
+    right: 10px;
     cursor: pointer;
     z-index: 12; }
-  .lightbox__close :hover {
-    opacity: 0.8; }
+    .lightbox__close :hover {
+      opacity: 0.8; }
   .lightbox__container {
     margin-right: 50px;
     margin-left: 50px;
@@ -258,10 +300,9 @@ header {
     min-height: 100vh;
     position: relative; }
     .lightbox__container img {
+      object-fit: cover;
       max-width: 100%;
-      max-height: 100vh;
-      height: auto;
-      animation: lightboxIn 0.5s; }
+      max-height: 100vh; }
   .lightbox__loader {
     position: absolute;
     top: 50%;

@@ -1,17 +1,4 @@
-.grid {
-  padding: 16px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, 20em);
-  grid-gap: 5em;
-
-  img {
-    object-fit: cover;
-    width: 350px;
-    height: 300px;
-  }
-}
-
+/** @format */
 .lightbox {
   position: fixed;
   top: 0;
@@ -23,11 +10,6 @@
   animation: lightboxIn 0.5s;
   transition: opacity 0.3s;
 
-  & img {
-    height: auto;
-    width: 100%;
-    animation: lightboxIn 0.5s;
-  }
 
   & .fadeOut {
     opacity: 0;
@@ -35,12 +17,14 @@
 
   &__next,
   &__prev {
+    background: white;
+    color: #901C1C;
     position: fixed;
     top: 0;
     right: 0;
-    margin-top: -14px;
+    bottom: 0;
     z-index: 11;
-    opacity: 0.5;
+    // opacity: 0.5;
     cursor: pointer;
     border: none;
     width: 50px;
@@ -60,16 +44,15 @@
   }
 
   &__close {
+    background-color: transparent;
+    color: #901C1C;
     border: none;
     position: fixed;
     top: 20px;
-    right: 20px;
-    opacity: 0.5;
+    right: 10px;
+    // opacity: 0.5;
     cursor: pointer;
     z-index: 12;
-  }
-
-  &__close {
     :hover {
       opacity: 0.8;
     }
@@ -86,11 +69,11 @@
     position: relative;
 
     & img {
+      object-fit: cover;
       max-width: 100%;
       max-height: 100vh;
-      height: auto;
-      animation: lightboxIn 0.5s;
     }
+
   }
 
   &__loader {

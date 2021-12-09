@@ -112,9 +112,9 @@ export class Lightbox {
     const dom = document.createElement("div");
     dom.classList.add("lightbox");
     dom.innerHTML = `<div class="lightbox">
-                        <button class="lightbox__close"><i class="fas fa-times"></i></button>
-                        <button class="lightbox__next"><i class="fas fa-angle-right"></i></button>
-                        <button class="lightbox__prev"><i class="fas fa-angle-left"></i></button>
+                        <button class="lightbox__close"><i class="fas fa-times fa-4x"></i></button>
+                        <button class="lightbox__next"><i class="fas fa-angle-right fa-4x"></i></button>
+                        <button class="lightbox__prev"><i class="fas fa-angle-left fa-4x"></i></button>
                         <div class="lightbox__container">  
                         </div>
                     </div>`;
