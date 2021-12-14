@@ -146,11 +146,14 @@ header {
 .presentation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   background-color: #fafafa;
-  height: 300px;
-  padding: 0 5em; }
+  justify-content: center; }
+  @media screen and (min-width: 500px) {
+    .presentation {
+      height: 300px;
+      padding: 0 5em;
+      justify-content: space-between; } }
   .presentation h1 {
     color: #d3573c;
     font-weight: 400;
@@ -161,8 +164,9 @@ header {
     color: #901c1c; }
   .presentation p {
     font-size: 18px;
-    font-weight: 400;
-    margin: 1em 0; }
+    font-weight: normal;
+    margin: 1em 0;
+    color: #525252; }
   .presentation img {
     object-fit: cover;
     border-radius: 50%;
@@ -174,12 +178,27 @@ header {
   overflow-y: hidden;
   padding-bottom: 5em; }
   .gallery__menu {
+    margin-top: em;
     display: flex;
     align-items: center; }
+    .gallery__menu p {
+      font-size: 18px;
+      font-weight: 700; }
     .gallery__menu__list {
       margin: 0 1em;
       list-style: none;
       position: relative; }
+      .gallery__menu__list i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%); }
+      .gallery__menu__list i:first-child {
+        visibility: hidden; }
+      .gallery__menu__list :hover i:first-child {
+        visibility: visible; }
+      .gallery__menu__list :hover i:last-child {
+        visibility: hidden; }
       .gallery__menu__list :hover ul {
         opacity: 1; }
       .gallery__menu__list ul {
@@ -197,7 +216,8 @@ header {
             text-decoration: none;
             color: #fff;
             display: block;
-            padding: 5px 20px; }
+            padding: 5px 20px;
+            position: relative; }
     .gallery__menu ul li a {
       border-radius: 5px;
       background: #901c1c;
@@ -207,7 +227,7 @@ header {
       text-align: center;
       text-decoration: none; }
     .gallery__menu ul li .btn-border {
-      margin-top: .4em;
+      margin-top: 0.4em;
       border-radius: 0 !important;
       border: 1px solid white;
       border-left: 0;
@@ -233,8 +253,12 @@ header {
     .gallery__img__desc {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       text-decoration: none;
       position: relative; }
+      .gallery__img__desc p {
+        font-size: 24px;
+        font-weight: 400; }
       .gallery__img__desc i {
         position: absolute;
         right: 0;
