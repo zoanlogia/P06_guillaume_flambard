@@ -9,7 +9,6 @@ export class PhotographerSolo {
     <ul class="a11y-nav">
       <li><a href="#main">Passer directement au contenu</a></li>
     </ul>
-    <div class="container">
       <header class="photographer-header">
         <a href="index.html">
           <img src="assets/images/logo.png" class="logo" alt="logo" />
@@ -26,7 +25,6 @@ export class PhotographerSolo {
           <img src="assets/photographers/${this._photographer.info.portrait}" alt="${this._photographer.info.name}" />  
         </section>
       </main>
-    </div>
     `;
     div.innerHTML = content
     return div
@@ -72,11 +70,19 @@ export class PhotographerSolo {
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-heart"></i>
           </div>
-        </a>
-        `
+        </a>`
       }
       else {
-        `<div>Videos</div>`
+        // videos += `
+        // <a href="../assets/${firstname[0]}/${data.video}">
+        //   <img src="../assets/${firstname[0]}/${data.video}" alt="image">
+        //   <div class="gallery__img__desc">
+        //     <p>${data.title}</p>
+        //     <span>${data.likes}</span>
+        //     <i class="fa-regular fa-heart"></i>
+        //     <i class="fa-solid fa-heart"></i>
+        //   </div>
+        // </a>`;
       }
     });
 
