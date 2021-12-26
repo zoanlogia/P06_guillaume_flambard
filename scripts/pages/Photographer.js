@@ -17,6 +17,13 @@ class Photographer {
       const onePhotographerData = await this.photographersApi.getOnePhotographer(id);
 
       const TemplateSolo = new PhotographerSolo(onePhotographerData)
+
+      this.$photographerSoloSection.appendChild(
+        TemplateSolo.createHeader()
+      );
+      this.$photographerSoloSection.appendChild(
+        TemplateSolo.createGallery()
+      );
       this.$photographerSoloSection.appendChild(
         TemplateSolo.createPhotographerSolo()
       );
