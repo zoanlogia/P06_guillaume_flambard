@@ -265,25 +265,21 @@ header {
       width: 350px;
       height: 300px; }
     .gallery__img__desc {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-decoration: none;
       position: relative; }
       .gallery__img__desc p {
         color: #901c1c;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 400; }
       .gallery__img__desc i {
         color: #901c1c;
-        font-size: 24px;
+        font-size: 20px;
         position: absolute;
         right: 0;
         top: 0;
         bottom: 0; }
       .gallery__img__desc span {
         color: #901c1c;
-        font-size: 24px;
+        font-size: 20px;
         position: absolute;
         right: 1.5em;
         top: -1.5px;

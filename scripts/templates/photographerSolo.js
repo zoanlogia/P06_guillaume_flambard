@@ -70,11 +70,9 @@ export class PhotographerSolo {
             <p>${data.title}</p>
             <form>
             <span>${data.likes}</span>
-            <label></label>
-            <input type="checkbox" hidden/>
             <i class="fa-regular fa-heart"></i>
-            <label></label>
-            <input type="checkbox" hidden/>
+            <label for="like"></label>
+            <input id="like" name="like" type="checkbox" hidden/>
             <i class="fa-solid fa-heart"></i>
             </form>
           </div>
