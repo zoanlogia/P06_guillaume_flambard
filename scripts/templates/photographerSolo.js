@@ -70,15 +70,17 @@ export class PhotographerSolo {
             <p>${data.title}</p>
             <form>
             <span>${data.likes}</span>
-            <i class="fa-regular fa-heart"></i>
-            <label for="like"></label>
-            <input id="like" name="like" type="checkbox" hidden/>
-            <i class="fa-solid fa-heart"></i>
+               <input type="checkbox" id="like" name="like">
+            <label class="like" for="like">
+              <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
+              <span class="icon-empty"><i class=" far fa-heart fa-1x"></i></span>
+            </label>
             </form>
           </div>
           </div>
         `;
       }
+
       else {
         medias += `
         <div class="medias-container">

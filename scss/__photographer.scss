@@ -170,7 +170,6 @@
       position: relative;
 
       & p {
-       
         color: #901c1c;
         font-size: 20px;
         font-weight: 400;
@@ -189,10 +188,16 @@
         color: #901c1c;
         font-size: 20px;
         position: absolute;
-        right: 1.5em;
+        right: 0;
         top: -1.5px;
         bottom: 0;
       }
+
+      & .icon-full {
+        display: none;
+      }
+
+      
     }
   }
 }
