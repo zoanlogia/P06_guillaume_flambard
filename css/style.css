@@ -54,6 +54,10 @@ body {
 .show {
   display: block; }
 
+.video {
+  width: 100%;
+  height: auto; }
+
 /** @format */
 header {
   display: flex;
@@ -63,7 +67,7 @@ header {
   align-items: center;
   height: 90px;
   width: 100%; }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     header {
       margin: 1em 0;
       text-align: center;
@@ -148,9 +152,11 @@ header {
   flex-wrap: wrap;
   align-items: center;
   background-color: #fafafa;
-  justify-content: center; }
-  @media screen and (min-width: 500px) {
+  justify-content: center;
+  text-align: center; }
+  @media screen and (min-width: 1440px) {
     .presentation {
+      text-align: left;
       height: 300px;
       padding: 0 5em;
       justify-content: space-between; } }
@@ -177,8 +183,15 @@ header {
 .gallery {
   overflow-y: hidden;
   padding-bottom: 5em; }
+  @media screen and (max-width: 768px) {
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; } }
   .gallery__menu {
-    margin-top: em;
+    margin-top: 1em;
     display: flex;
     align-items: center; }
     .gallery__menu p {
@@ -239,6 +252,9 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between; }
+    @media screen and (max-width: 768px) {
+      .gallery__img {
+        justify-content: center; } }
     .gallery__img a {
       text-decoration: none;
       color: #901c1c;

@@ -75,7 +75,7 @@ export class PhotographerSolo {
       else {
         medias += `
         <a href="../assets/${firstname[0]}/${data.video}">
-          <video controls height="300" width="350">
+          <video controls class="video">
           <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
           </video>
           <div class="gallery__img__desc">

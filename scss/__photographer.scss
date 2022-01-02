@@ -10,7 +10,9 @@
   align-items: center;
   background-color: #fafafa;
   justify-content: center;
-  @media screen and (min-width: 500px) {
+  text-align: center;
+  @media screen and (min-width: 1440px) {
+    text-align: left;
     height: 300px;
     padding: 0 5em;
     justify-content: space-between;
@@ -44,11 +46,18 @@
 }
 
 .gallery {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   overflow-y: hidden;
   padding-bottom: 5em;
 
   &__menu {
-    margin-top: em;
+    margin-top: 1em;
     display: flex;
     align-items: center;
 
@@ -136,6 +145,10 @@
   }
 
   &__img {
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
     display: flex;
     flex-wrap: wrap;
     align-items: center;
