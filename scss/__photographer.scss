@@ -144,8 +144,11 @@
     }
   }
 
-  &__img {
+  .medias-container {
+    margin: 3em 0;
+  }
 
+  &__img {
     @media screen and (max-width: 768px) {
       justify-content: center;
     }
@@ -154,19 +157,13 @@
     align-items: center;
     justify-content: space-between;
 
-    & a {
-      text-decoration: none;
-      color: #901c1c;
+    & img {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      object-fit: cover;
       width: 350px;
       height: 300px;
-      margin: 3em 0;
-
-      & img {
-        height: 100%;
-        width: 100%;
-        border-radius: 5px;
-        object-fit: cover;
-      }
     }
 
     &__desc {
@@ -177,11 +174,14 @@
       position: relative;
 
       & p {
+        color: #901c1c;
         font-size: 24px;
         font-weight: 400;
       }
 
       & i {
+        color: #901c1c;
+        font-size: 24px;
         position: absolute;
         right: 0;
         top: 0;
@@ -189,6 +189,8 @@
       }
 
       & span {
+        color: #901c1c;
+        font-size: 24px;
         position: absolute;
         right: 1.5em;
         top: -1.5px;

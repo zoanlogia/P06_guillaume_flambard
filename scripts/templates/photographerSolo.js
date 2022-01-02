@@ -62,28 +62,40 @@ export class PhotographerSolo {
     this._photographer.medias.forEach(data => {
       if (data.image) {
         medias += `
+        <div class="medias-container">
         <a href="../assets/${firstname[0]}/${data.image}">
           <img src="../assets/${firstname[0]}/${data.image}" alt="image">
+          </a>
           <div class="gallery__img__desc">
             <p>${data.title}</p>
+            <form>
             <span>${data.likes}</span>
+            <label></label>
+            <input type="checkbox" hidden/>
             <i class="fa-regular fa-heart"></i>
+            <label></label>
+            <input type="checkbox" hidden/>
             <i class="fa-solid fa-heart"></i>
+            </form>
           </div>
-        </a>`
+          </div>
+        `;
       }
       else {
         medias += `
+        <div class="medias-container">
         <a href="../assets/${firstname[0]}/${data.video}">
           <video controls class="video">
           <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
           </video>
+          </a>
           <div class="gallery__img__desc">
             <span>${data.likes}</span>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-heart"></i>
           </div>
-        </a>`;
+          </div>
+        `;
       }
     });
 
