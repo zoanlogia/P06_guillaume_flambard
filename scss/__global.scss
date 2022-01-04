@@ -69,7 +69,12 @@ body {
 
 .video {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+button:hover {
+  background-color:#DB8876;
+  color: black;
 }
 
 
