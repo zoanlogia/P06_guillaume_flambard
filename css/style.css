@@ -279,18 +279,14 @@ header {
         font-weight: 400; }
       .gallery__img__desc i {
         color: #901c1c;
-        font-size: 20px;
-        right: 0;
-        top: 0;
-        bottom: 0; }
+        font-size: 20px; }
       .gallery__img__desc span {
         color: #901c1c;
         font-size: 20px;
-        right: 0;
-        top: -1.5px;
-        bottom: 0; }
-      .gallery__img__desc .icon-full {
-        display: none; }
+        position: relative; }
+        .gallery__img__desc span.icon-full {
+          visibility: hidden;
+          position: absolute; }
 
 .contact_button {
   font-size: 20px;
