@@ -30,28 +30,6 @@ export class PhotographerSolo {
     return div
   }
 
-  // createPhotographerSolo() {
-  //   const sectionSolo = document.createElement("div");
-  //   sectionSolo.classList.add("container-card");
-  //   const photographerSolo = `
-  //   <div class="container-card">
-  //   <article>
-  //     <a href="photographer.html?id=${this._photographer.info.id}">
-  //       <img class="photographer_img" src="assets/photographers/${this._photographer.info.portrait}" alt="${this._photographer.info.name}" width='350' height="300"/>
-  //         <h2>${this._photographer.info.name}</h2>
-  //     </a>
-  //     <p class="photographer_city">${this._photographer.info.city}, ${this._photographer.info.country}</p>
-  //     <a href="#">
-  //       <p class="photographer_tagline">${this._photographer.info.tagline}</p>
-  //     </a>
-  //     <p class="photographer_price">${this._photographer.info.price}</p>
-  //   </article>
-  //   </div>`;
-
-  //   sectionSolo.innerHTML = photographerSolo;
-  //   return sectionSolo;
-  // }
-
   createGallery() {
     const div = document.createElement('div')
 
@@ -63,61 +41,65 @@ export class PhotographerSolo {
       if (data.image) {
         medias += `
         <div class="medias-container">
-        <a href="../assets/${firstname[0]}/${data.image}">
-          <img src="../assets/${firstname[0]}/${data.image}" alt="image">
+          <a href="../assets/${firstname[0]}/${data.image}">
+            <img src="../assets/${firstname[0]}/${data.image}" alt="image">
           </a>
           <div class="gallery__img__desc">
+            <div>
             <p>${data.title}</p>
-            <form>
-            <span>${data.likes}</span>
-               <input type="checkbox" id="like" name="like">
-            <label class="like" for="like">
+            </div>
+            <div class="heart-container">
+              <span>${data.likes}</span>
               <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
-              <span class="icon-empty"><i class=" far fa-heart fa-1x"></i></span>
-            </label>
-            </form>
+              <span class="icon-empty"><i class="far fa-heart fa-1x"></i></span>
+            </div>
           </div>
-          </div>
+        </div>
         `;
       }
 
       else {
         medias += `
         <div class="medias-container">
-        <a href="../assets/${firstname[0]}/${data.video}">
-          <video controls class="video">
-          <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
-          </video>
+          <a href="../assets/${firstname[0]}/${data.video}">
+            <video controls class="video">
+              <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
+            </video>
           </a>
           <div class="gallery__img__desc">
-            <span>${data.likes}</span>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-heart"></i>
+            <div class="heart-container">
+              <span>${data.likes}</span>
+              <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
+              <span class="icon-empty"><i class="far fa-heart fa-1x"></i></span>
+            </div>
           </div>
-          </div>
+        </div>
         `;
       }
     });
 
-    div.innerHTML = `<section class="gallery">
-          <div class="gallery__menu">
-            <p>Trier par</p>
-            <ul class="gallery__menu__list">
-              <li>
-                <a href="#"
-                  >Popularité &nbsp; <i class="fa fa-angle-up"></i
-                  ><i class="fa fa-angle-down"></i
-                ></a>
-                <ul>
-                  <li><a class="btn-border" href="#">Date</a></li>
-                  <li><a href="#">Titre</a></li>
-                </ul>
-              </li>
+    div.innerHTML = `
+    <section class="gallery">
+      <div class="gallery__menu">
+        <p>Trier par</p>
+        <ul class="gallery__menu__list">
+          <li>
+            <a href="#"
+              >Popularité &nbsp; <i class="fa fa-angle-up"></i
+              ><i class="fa fa-angle-down"></i>
+            </a>
+            <ul>
+              <li><a class="btn-border" href="#">Date</a></li>
+              <li><a href="#">Titre</a></li>
             </ul>
-          </div>
-          <div class="gallery__img">
-          ${medias}
-          </div>`;
+          </li>
+        </ul>
+      </div>
+      <div class="gallery__img">
+      ${medias}
+      </div>
+    </section>`;
+    
     return div
   }
 }

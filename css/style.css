@@ -269,7 +269,10 @@ header {
       width: 350px;
       height: 300px; }
     .gallery__img__desc {
-      position: relative; }
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
       .gallery__img__desc p {
         color: #901c1c;
         font-size: 20px;
@@ -277,14 +280,12 @@ header {
       .gallery__img__desc i {
         color: #901c1c;
         font-size: 20px;
-        position: absolute;
         right: 0;
         top: 0;
         bottom: 0; }
       .gallery__img__desc span {
         color: #901c1c;
         font-size: 20px;
-        position: absolute;
         right: 0;
         top: -1.5px;
         bottom: 0; }

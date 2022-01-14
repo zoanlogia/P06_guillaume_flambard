@@ -168,6 +168,9 @@
 
     &__desc {
       position: relative;
+      display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
       & p {
         color: #901c1c;
@@ -178,7 +181,6 @@
       & i {
         color: #901c1c;
         font-size: 20px;
-        position: absolute;
         right: 0;
         top: 0;
         bottom: 0;
@@ -187,7 +189,6 @@
       & span {
         color: #901c1c;
         font-size: 20px;
-        position: absolute;
         right: 0;
         top: -1.5px;
         bottom: 0;
@@ -196,6 +197,7 @@
       & .icon-full {
         display: none;
       }
+
 
       
     }
