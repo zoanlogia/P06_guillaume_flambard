@@ -23,8 +23,8 @@ class Photographer {
 
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
     this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
+
     this.likesHandler();
-    // this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
   }
 
   likesHandler = () => {

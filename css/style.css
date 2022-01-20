@@ -279,8 +279,7 @@ header {
         font-weight: 400; }
       .gallery__img__desc i {
         color: #901c1c;
-        font-size: 20px;
-        cursor: pointer; }
+        font-size: 20px; }
       .gallery__img__desc span {
         color: #901c1c;
         font-size: 20px;
@@ -416,13 +415,3 @@ form {
     height: 68px;
     border: none;
     border-radius: 5px; }
-
-/** @format */
-.counter {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center; }

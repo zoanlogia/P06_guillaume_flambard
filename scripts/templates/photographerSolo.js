@@ -99,6 +99,7 @@ export class PhotographerSolo {
       ${medias}
       </div>
     </section>`;
+    
     return div
   }
 }
