@@ -279,7 +279,10 @@ header {
         font-weight: 400; }
       .gallery__img__desc i {
         color: #901c1c;
-        font-size: 20px; }
+        font-size: 20px;
+        right: 0;
+        top: 0;
+        bottom: 0; }
       .gallery__img__desc span {
         color: #901c1c;
         font-size: 20px;
