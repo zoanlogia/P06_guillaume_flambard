@@ -25,6 +25,8 @@ class Photographer {
     this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
     this.likesHandler();
     this.$photographerSoloSection.appendChild(TemplateSolo.createCounter());
+    this.$photographerSoloSection.appendChild(TemplateSolo.createModal());
+    this.myModal()
   }
 
   likesHandler = () => {
@@ -50,7 +52,9 @@ class Photographer {
   };
 
   computeTotalLike = () => {
-    const span = document.querySelectorAll(".heart-container > span:nth-child(1)");
+    const span = document.querySelectorAll(
+      ".heart-container > span:nth-child(1)",
+    );
     let ttx = 0;
 
     span.forEach((like) => {
@@ -58,8 +62,28 @@ class Photographer {
       ttx += parseInt(like.innerHTML);
     });
 
-    const totalLike = document.querySelector('.ttx')
-    totalLike.innerHTML = ttx.toString()
+    const totalLike = document.querySelector(".ttx");
+    totalLike.innerHTML = ttx.toString();
+  };
+
+  myModal = () => {
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("myBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    span.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    });
   };
 }
 

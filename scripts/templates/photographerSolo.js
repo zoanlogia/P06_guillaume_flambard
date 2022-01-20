@@ -23,7 +23,7 @@ export class PhotographerSolo {
             <h2>${this._photographer.info.city}, ${this._photographer.info.country}</h2>
             <p>${this._photographer.info.tagline}</p>
           </div>
-          <button class="contact_button">Contactez-moi</button>
+          <button id="myBtn" class="contact_button">Contactez-moi</button>
           <img src="assets/photographers/${this._photographer.info.portrait}" alt="${this._photographer.info.name}" />  
         </section>
       </main>
@@ -102,7 +102,9 @@ export class PhotographerSolo {
   }
 
   createCounter() {
-    const span = document.querySelectorAll(".heart-container > span:nth-child(1)");
+    const span = document.querySelectorAll(
+      ".heart-container > span:nth-child(1)",
+    );
     let ttx = 0;
 
     span.forEach((like) => {
@@ -118,6 +120,33 @@ export class PhotographerSolo {
       </div>
       <span>${this._photographer.info.price} / jour</span>
     </div>`;
+    return html;
+  }
+
+  createModal() {
+    const html = document.createElement("div");
+    html.innerHTML = `
+      <div class="modal" id="myModal">
+        <div class="modal-content">
+          <div class="title">
+            <h2>Contactez-moi</h2>
+            <span class="close">&times;</span>
+          </div>
+          <h2>${this._photographer.info.name}</h2>
+          <form>
+            <label for="name">Prénom</label>
+            <input type="text" id="name" />
+            <label for="lastname">Nom</label>
+            <input type="text" id="lastname" />
+            <label for="mail">Email</label>
+            <input type="mail" id="mail" />
+            <label for="message">Votre message</label>
+            <textarea type="textarea" id="message"></textarea>
+            </form>
+            <button type="submit">Envoyer</button>
+        </div>
+      </div>
+    `;
     return html;
   }
 }
