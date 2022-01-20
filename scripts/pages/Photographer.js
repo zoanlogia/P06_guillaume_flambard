@@ -33,16 +33,13 @@ class Photographer {
     likesContainer.forEach((likeContainer) => {
       likeContainer.addEventListener("click", () => {
         const span = likeContainer.parentElement.querySelector("span");
-        const icon = likeContainer.querySelector(".icon-full");
 
         if (likeContainer.classList.contains("clicked")) {
           likeContainer.classList.remove("clicked");
           span.innerHTML = parseInt(span.innerHTML) - 1;
-          icon.style.visibility = "hidden";
         } else {
           likeContainer.classList.add("clicked");
           span.innerHTML = parseInt(span.innerHTML) + 1;
-          icon.style.visibility = "visible";
         }
         this.computeTotalLike();
       });
@@ -50,14 +47,14 @@ class Photographer {
   };
 
   computeTotalLike = () => {
-    const span = document.querySelectorAll(".gallery_img_desc_like > span");
-    let ttx = 0;
+    const span = document.querySelectorAll('.gallery_img_desc_like > span')
+    let ttx = 0
 
-    span.forEach((like) => {
+    span.forEach(like => {
       console.log(like.innerHTML);
-      ttx += parseInt(like.innerHTML);
+      ttx += parseInt(like.innerHTML)
     });
-  };
+  }
 }
 
 const page = new Photographer();
