@@ -280,13 +280,7 @@ header {
       .gallery__img__desc i {
         color: #901c1c;
         font-size: 20px;
-<<<<<<< HEAD
         cursor: pointer; }
-=======
-        right: 0;
-        top: 0;
-        bottom: 0; }
->>>>>>> parent of 20e98c8 (add display on click (hearts))
       .gallery__img__desc span {
         color: #901c1c;
         font-size: 20px;

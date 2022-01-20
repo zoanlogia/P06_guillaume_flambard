@@ -169,8 +169,8 @@
     &__desc {
       position: relative;
       display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
 
       & p {
         color: #901c1c;
@@ -181,13 +181,8 @@
       & i {
         color: #901c1c;
         font-size: 20px;
-<<<<<<< HEAD
+
         cursor: pointer;
-=======
-        right: 0;
-        top: 0;
-        bottom: 0;
->>>>>>> parent of 20e98c8 (add display on click (hearts))
       }
 
       & span {
@@ -201,9 +196,6 @@
       & .icon-full {
         display: none;
       }
-
-
-      
     }
   }
 }
