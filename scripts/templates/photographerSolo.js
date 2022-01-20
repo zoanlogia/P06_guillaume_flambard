@@ -1,10 +1,12 @@
+/** @format */
+
 export class PhotographerSolo {
   constructor(photographer) {
     this._photographer = photographer;
   }
 
   createHeader() {
-    const div = document.createElement('div')
+    const div = document.createElement("div");
     const content = `
     <ul class="a11y-nav">
       <li><a href="#main">Passer directement au contenu</a></li>
@@ -26,18 +28,17 @@ export class PhotographerSolo {
         </section>
       </main>
     `;
-    div.innerHTML = content
-    return div
+    div.innerHTML = content;
+    return div;
   }
 
   createGallery() {
-    const div = document.createElement('div')
+    const div = document.createElement("div");
 
-    const firstname = this._photographer.info.name.split(' ')
+    const firstname = this._photographer.info.name.split(" ");
 
-
-    let medias = ''
-    this._photographer.medias.forEach(data => {
+    let medias = "";
+    this._photographer.medias.forEach((data) => {
       if (data.image) {
         medias += `
         <div class="medias-container">
@@ -56,9 +57,7 @@ export class PhotographerSolo {
           </div>
         </div>
         `;
-      }
-
-      else {
+      } else {
         medias += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.video}">
@@ -99,6 +98,26 @@ export class PhotographerSolo {
       ${medias}
       </div>
     </section>`;
-    return div
+    return div;
+  }
+
+  createCounter() {
+    const span = document.querySelectorAll(".heart-container > span:nth-child(1)");
+    let ttx = 0;
+
+    span.forEach((like) => {
+      ttx += parseInt(like.innerHTML);
+    });
+
+    const html = document.createElement("div");
+    html.innerHTML = ` 
+    <div class="counter">
+      <div>
+        <span class="ttx">${ttx}</span>
+        <i class="fas fa-heart"></i>
+      </div>
+      <span>${this._photographer.info.price} / jour</span>
+    </div>`;
+    return html;
   }
 }

@@ -24,7 +24,7 @@ class Photographer {
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
     this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
     this.likesHandler();
-    // this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
+    this.$photographerSoloSection.appendChild(TemplateSolo.createCounter());
   }
 
   likesHandler = () => {
@@ -50,13 +50,16 @@ class Photographer {
   };
 
   computeTotalLike = () => {
-    const span = document.querySelectorAll(".gallery_img_desc_like > span");
+    const span = document.querySelectorAll(".heart-container > span:nth-child(1)");
     let ttx = 0;
 
     span.forEach((like) => {
       console.log(like.innerHTML);
       ttx += parseInt(like.innerHTML);
     });
+
+    const totalLike = document.querySelector('.ttx')
+    totalLike.innerHTML = ttx.toString()
   };
 }
 
