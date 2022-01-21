@@ -26,7 +26,8 @@ class Photographer {
     this.likesHandler();
     this.$photographerSoloSection.appendChild(TemplateSolo.createCounter());
     this.$photographerSoloSection.appendChild(TemplateSolo.createModal());
-    this.myModal()
+    this.myModal();
+    this.msgError();
   }
 
   likesHandler = () => {
@@ -83,6 +84,66 @@ class Photographer {
       if (e.target == modal) {
         modal.style.display = "none";
       }
+    });
+  };
+
+  msgError = () => {
+    const form = document.getElementById("form1");
+    const name = document.getElementById("name");
+    const lastName = document.getElementById("lastname");
+    const mail = document.getElementById("mail");
+    const error = document.getElementsByClassName("error");
+    const regex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    const STATE = {
+      name: "",
+      lastname: "",
+      email: "",
+      message: "",
+    };
+
+    const initState = () => {
+      STATE.name = name.value;
+      STATE.lastname = lastName.value;
+      STATE.email = mail.value;
+      STATE.message = message.value;
+    };
+
+    const validation = () => {
+      STATE.name.length > 0
+        ? (error[0].style.display = "none")
+        : (error[0].style.display = "block");
+      STATE.lastname.length > 0
+        ? (error[1].style.display = "none")
+        : (error[1].style.display = "block");
+      STATE.email.length > 0 && STATE.email.match(regex)
+        ? (error[2].style.display = "none")
+        : (error[2].style.display = "block");
+
+      if (STATE.name.length && STATE.lastname.length && STATE.email.length) {
+        displayConfirmMessage();
+      }
+    };
+
+    const displayConfirmMessage = () => {
+      const message = document.querySelector(".confirmation");
+      const modal = document.querySelector(".modal");
+      message.style.display = "block";
+
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 4000);
+      setTimeout(() => {
+        message.style.display = "none";
+      }, 3000);
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      initState();
+      validation();
+      console.log("RESPONSE :", STATE);
     });
   };
 }

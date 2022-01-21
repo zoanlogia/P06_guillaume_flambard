@@ -35,7 +35,7 @@ export class PhotographerSolo {
   createGallery() {
     const div = document.createElement("div");
 
-    const firstname = this._photographer.info.name.split(" ");
+    const firstname = this._photographer.info.name.split(" ");  
 
     let medias = "";
     this._photographer.medias.forEach((data) => {
@@ -133,17 +133,21 @@ export class PhotographerSolo {
             <span class="close">&times;</span>
           </div>
           <h2>${this._photographer.info.name}</h2>
-          <form>
+          <form id="form1">
             <label for="name">Prénom</label>
-            <input type="text" id="name" />
+            <input type="text" id="name" name="name" />
+            <p class="error">Veuillez renseigner un prénom valide</p>
             <label for="lastname">Nom</label>
-            <input type="text" id="lastname" />
+            <input type="text" id="lastname" name="lastname"/>
+            <p class="error">Veuillez renseigner un nom valide</p>
             <label for="mail">Email</label>
-            <input type="mail" id="mail" />
+            <input type="mail" id="mail" name="name" />
+            <p class="error">Veuillez renseigner un email valide </p>
             <label for="message">Votre message</label>
-            <textarea type="textarea" id="message"></textarea>
+            <textarea type="textarea" id="message" name="message"></textarea>
+            <div class="confirmation">Votre demande a bien été envoyée !</div>
+            <button form="form1" type="submit">Envoyer</button>
             </form>
-            <button type="submit">Envoyer</button>
         </div>
       </div>
     `;
