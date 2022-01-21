@@ -11,6 +11,11 @@
   right: 2em;
   bottom: 0;
   width: 20%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    right: 0;
+  }
+  
   height: 3em;
   background-color: #DB8876;
   color: black;

@@ -35,7 +35,7 @@ export class PhotographerSolo {
   createGallery() {
     const div = document.createElement("div");
 
-    const firstname = this._photographer.info.name.split(" ");  
+    const firstname = this._photographer.info.name.split(" ");
 
     let medias = "";
     this._photographer.medias.forEach((data) => {
@@ -77,26 +77,18 @@ export class PhotographerSolo {
       }
     });
 
-    div.innerHTML = `
-    <section class="gallery">
+    div.innerHTML = `<section class="gallery">
       <div class="gallery__menu">
         <p>Trier par</p>
-        <ul class="gallery__menu__list">
-          <li>
-            <a href="#"
-              >Popularité &nbsp; <i class="fa fa-angle-up"></i
-              ><i class="fa fa-angle-down"></i>
-            </a>
-            <ul>
-              <li><a class="btn-border" href="#">Date</a></li>
-              <li><a href="#">Titre</a></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="dropdown">
+          <button id="dropBtn" class="dropbtn">Popularité <i class="fas fa-angle-down"></i></button>
+          <ul id="myDropdown" class="dropdown-content option">
+            <li class="option">Date</li>
+            <li class="option">Titre</li>
+          </ul>
+        </div>
       </div>
-      <div class="gallery__img">
-      ${medias}
-      </div>
+      <div class="gallery__img">${medias}</div>
     </section>`;
     return div;
   }

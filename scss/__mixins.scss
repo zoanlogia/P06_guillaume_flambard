@@ -1,4 +1,11 @@
+/** @format */
+
 @mixin imgPhoto {
-    object-fit: cover;
-    border-radius: 50%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@mixin orangeHover {
+  background-color: #db8876;
+  color: black;
 }

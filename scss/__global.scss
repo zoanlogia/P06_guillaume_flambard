@@ -1,10 +1,12 @@
+/** @format */
+
 ::-webkit-scrollbar {
   width: 7px;
 }
 
 ::-webkit-scrollbar-track {
   background: #fff;
-  padding: 1px
+  padding: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -16,7 +18,7 @@
 }
 
 .lightbox::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
 
@@ -26,7 +28,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -47,7 +50,6 @@ body {
   }
 }
 
-
 .title {
   color: #901c1c;
   font-size: 1.25rem;
@@ -67,14 +69,14 @@ body {
   display: block;
 }
 
-.video {
-  width: 100%;
-  height: 100%;
+video {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 350px;
+  height: 300px;
 }
 
 button:hover {
-  background-color:#DB8876;
+  background-color: #db8876;
   color: black;
 }
-
-

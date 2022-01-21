@@ -28,6 +28,8 @@ class Photographer {
     this.$photographerSoloSection.appendChild(TemplateSolo.createModal());
     this.myModal();
     this.msgError();
+    this.dropBtn()
+    // this.filter()
   }
 
   likesHandler = () => {
@@ -144,6 +146,20 @@ class Photographer {
       initState();
       validation();
       console.log("RESPONSE :", STATE);
+    });
+  };
+
+  dropBtn = () => {
+    const dropBtn = document.getElementById("dropBtn");
+    const myDropDown = document.getElementById('myDropdown')
+    dropBtn.addEventListener("click", () => {
+      myDropDown.classList.toggle("show");
+      if (myDropDown.classList.contains('show')) {
+        dropBtn.style.borderRadius = "5px 5px 0 0"
+        document.querySelector("#myDropdown").style.borderRadius = "0 0 5px 5px"
+      } else {
+         dropBtn.style.borderRadius = "5px";
+      }
     });
   };
 }
