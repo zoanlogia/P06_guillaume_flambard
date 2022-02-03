@@ -189,6 +189,57 @@ header {
     height: 220px;
     object-fit: cover; }
 
+.dropdown-container {
+  margin-top: 1em;
+  display: flex;
+  align-items: center; }
+  .dropdown-container p {
+    font-size: 18px;
+    font-weight: 700; }
+  .dropdown-container .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 1em;
+    /* Dropdown Content (Hidden by Default) */
+    /* Links inside the dropdown */
+    /* Change color of dropdown links on hover */
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */ }
+    .dropdown-container .dropdown .dropbtn {
+      background-color: #911c1c;
+      color: white;
+      padding: 16px 35px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px; }
+    .dropdown-container .dropdown .dropbtn:hover {
+      background-color: #db8876;
+      color: black; }
+    .dropdown-container .dropdown .dropdown-content {
+      border-radius: 0 0 5px 5;
+      display: none;
+      position: absolute;
+      background-color: #911c1c;
+      width: 100%;
+      border: none;
+      z-index: 1; }
+      .dropdown-container .dropdown .dropdown-content li {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer; }
+    .dropdown-container .dropdown .dropdown-content li:nth-child(1) {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white; }
+    .dropdown-container .dropdown .dropdown-content li:nth-child(2):hover {
+      border-radius: 0 0 5px 5px; }
+    .dropdown-container .dropdown .dropdown-content li:hover {
+      background-color: #db8876;
+      color: black; }
+    .dropdown-container .dropdown .show {
+      display: block; }
+
 .gallery {
   overflow-y: hidden;
   padding-bottom: 5em; }
@@ -199,56 +250,6 @@ header {
       justify-content: center;
       align-items: center;
       text-align: center; } }
-  .gallery__menu {
-    margin-top: 1em;
-    display: flex;
-    align-items: center; }
-    .gallery__menu p {
-      font-size: 18px;
-      font-weight: 700; }
-  .gallery .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left: 1em;
-    /* Dropdown Content (Hidden by Default) */
-    /* Links inside the dropdown */
-    /* Change color of dropdown links on hover */
-    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */ }
-    .gallery .dropdown .dropbtn {
-      background-color: #911c1c;
-      color: white;
-      padding: 16px 35px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px; }
-    .gallery .dropdown .dropbtn:hover {
-      background-color: #db8876;
-      color: black; }
-    .gallery .dropdown .dropdown-content {
-      border-radius: 0 0 5px 5;
-      display: none;
-      position: absolute;
-      background-color: #911c1c;
-      width: 100%;
-      border: none;
-      z-index: 1; }
-      .gallery .dropdown .dropdown-content li {
-        color: white;
-        padding: 16px;
-        text-decoration: none;
-        display: block;
-        cursor: pointer; }
-    .gallery .dropdown .dropdown-content li:nth-child(1) {
-      border-top: 1px solid white;
-      border-bottom: 1px solid white; }
-    .gallery .dropdown .dropdown-content li:nth-child(2):hover {
-      border-radius: 0 0 5px 5px; }
-    .gallery .dropdown .dropdown-content li:hover {
-      background-color: #db8876;
-      color: black; }
-    .gallery .dropdown .show {
-      display: block; }
   .gallery .medias-container {
     margin: 3em 0; }
   .gallery__img {

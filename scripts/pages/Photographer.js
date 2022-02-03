@@ -22,6 +22,7 @@ class Photographer {
     const TemplateSolo = new PhotographerSolo(onePhotographerData);
 
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
+    this.$photographerSoloSection.appendChild(TemplateSolo.createFilter());
     this.$photographerSoloSection.appendChild(TemplateSolo.createGallery());
     this.likesHandler();
     this.$photographerSoloSection.appendChild(TemplateSolo.createCounter());

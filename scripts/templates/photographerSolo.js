@@ -8,39 +8,70 @@ export class PhotographerSolo {
   createHeader() {
     const div = document.createElement("div");
     const content = `
-    <ul class="a11y-nav">
-      <li><a href="#main">Passer directement au contenu</a></li>
-    </ul>
       <header class="photographer-header">
         <a href="index.html">
           <img src="assets/images/logo.png" class="logo" alt="logo" />
         </a>
       </header>
-      <main id="main">
-        <section class="presentation">
-          <div>
-            <h1>${this._photographer.info.name}</h1>
-            <h2>${this._photographer.info.city}, ${this._photographer.info.country}</h2>
-            <p>${this._photographer.info.tagline}</p>
-          </div>
-          <button id="myBtn" class="contact_button">Contactez-moi</button>
-          <img src="assets/photographers/${this._photographer.info.portrait}" alt="${this._photographer.info.name}" />  
-        </section>
-      </main>
+      <section class="presentation">
+        <div>
+          <h1>${this._photographer.info.name}</h1>
+          <h2>
+            ${this._photographer.info.city}, ${this._photographer.info.country}
+          </h2>
+          <p>${this._photographer.info.tagline}</p>
+        </div>
+        <button id="myBtn" class="contact_button">Contactez-moi</button>
+        <img
+          src="assets/photographers/${this._photographer.info.portrait}"
+          alt="${this._photographer.info.name}"
+        />
+      </section>
+    `;
+    div.innerHTML = content;
+    return div;
+  }
+  
+  createFilter() {
+    const div = document.createElement("div");
+    div.classList.add("dropdown-container");
+    const content = `
+     <p>Trier par</p>
+        <div class="dropdown">
+          <button id="dropBtn" class="dropbtn">Popularité <i class="fas fa-angle-down"></i></button>
+          <ul id="myDropdown" class="dropdown-content option">
+            <li class="option">Date</li>
+            <li class="option">Titre</li>
+          </ul>
+        </div>
     `;
     div.innerHTML = content;
     return div;
   }
 
-  createGallery() {
-    const div = document.createElement("div");
+  createGallery(mediaToShow) {
 
     const firstname = this._photographer.info.name.split(" ");
 
-    let medias = "";
-    this._photographer.medias.forEach((data) => {
+    const isGalleryAlreadyHere = document.querySelector(".gallery");
+
+    let div
+
+    if (isGalleryAlreadyHere) {
+      div = isGalleryAlreadyHere;
+    } else {
+      div = document.createElement("div");
+      div.classList.add("gallery");
+    }
+
+    const medias = mediaToShow ? mediaToShow : this._photographer.medias;
+
+    console.log(medias);
+    
+    medias.forEach((data) => {
+      let dom = "";
       if (data.image) {
-        medias += `
+        dom += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.image}">
             <img src="../assets/${firstname[0]}/${data.image}" alt="image">
@@ -58,7 +89,7 @@ export class PhotographerSolo {
         </div>
         `;
       } else {
-        medias += `
+        dom += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.video}">
             <video controls class="video">
@@ -75,21 +106,8 @@ export class PhotographerSolo {
         </div>
         `;
       }
+      div.innerHTML = dom
     });
-
-    div.innerHTML = `<section class="gallery">
-      <div class="gallery__menu">
-        <p>Trier par</p>
-        <div class="dropdown">
-          <button id="dropBtn" class="dropbtn">Popularité <i class="fas fa-angle-down"></i></button>
-          <ul id="myDropdown" class="dropdown-content option">
-            <li class="option">Date</li>
-            <li class="option">Titre</li>
-          </ul>
-        </div>
-      </div>
-      <div class="gallery__img">${medias}</div>
-    </section>`;
     return div;
   }
 
