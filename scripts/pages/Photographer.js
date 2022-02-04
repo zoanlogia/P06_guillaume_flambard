@@ -29,7 +29,7 @@ class Photographer {
     this.$photographerSoloSection.appendChild(TemplateSolo.createModal());
     this.myModal();
     this.msgError();
-    this.dropBtn()
+    this.dropBtn();
     // this.filter()
   }
 
@@ -152,16 +152,41 @@ class Photographer {
 
   dropBtn = () => {
     const dropBtn = document.getElementById("dropBtn");
-    const myDropDown = document.getElementById('myDropdown')
+    const myDropDown = document.getElementById("myDropdown");
+    const options = document.querySelectorAll('.option')
+
     dropBtn.addEventListener("click", () => {
       myDropDown.classList.toggle("show");
-      if (myDropDown.classList.contains('show')) {
-        dropBtn.style.borderRadius = "5px 5px 0 0"
-        document.querySelector("#myDropdown").style.borderRadius = "0 0 5px 5px"
+
+      if (myDropDown.classList.contains("show")) {
+        myDropDown.style.borderRadius = "0 0 5px 5px";
       } else {
-         dropBtn.style.borderRadius = "5px";
+        dropBtn.style.borderRadius = "5px";
       }
     });
+
+    options.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        console.log(option.textContent);
+        e.preventDefault()
+        this.filteredMedia()
+      })
+    })
+  };
+
+  filteredMedia = (option) => {
+    switch (option) {
+      case "Date":
+      console.log("date");
+        break;
+      case "titre":
+        console.log("title");
+        break;
+      default:
+        console.log("popularity");
+        
+        break;
+    }
   };
 }
 
