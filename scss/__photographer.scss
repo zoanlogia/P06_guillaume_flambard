@@ -114,23 +114,23 @@
   }
 }
 
-  .gallery {
-    @media screen and (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    overflow-y: hidden;
+.gallery {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  overflow-y: hidden;
 
-    padding-bottom: 5em;
+  padding-bottom: 5em;
 
-    .medias-container {
-      margin: 3em 0;
-    }
-
-    &__img {
+  .medias-container {
+    margin: 3em 0;
+    width: 350px;
+    height: 300px;
+    & img {
       @media screen and (max-width: 768px) {
         justify-content: center;
       }
@@ -138,48 +138,42 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .desc {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
-      & img {
-        height: 100%;
-        width: 100%;
-        border-radius: 5px;
-        object-fit: cover;
-        width: 350px;
-        height: 300px;
+      & p {
+        color: #901c1c;
+        font-size: 20px;
+        font-weight: 400;
       }
 
-      &__desc {
+      & i {
+        color: #901c1c;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      & span {
+        color: #901c1c;
+        font-size: 20px;
         position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
 
-        & p {
-          color: #901c1c;
-          font-size: 20px;
-          font-weight: 400;
-        }
-
-        & i {
-          color: #901c1c;
-          font-size: 20px;
-          cursor: pointer;
-        }
-
-        & span {
-          color: #901c1c;
-          font-size: 20px;
-          position: relative;
-
-          &.icon-full {
-            visibility: hidden;
-            position: absolute;
-          }
+        &.icon-full {
+          visibility: hidden;
+          position: absolute;
         }
       }
     }
   }
-
+}
 
 .contact_button {
   font-size: 20px;

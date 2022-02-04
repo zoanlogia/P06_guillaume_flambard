@@ -76,7 +76,7 @@ export class PhotographerSolo {
           <a href="../assets/${firstname[0]}/${data.image}">
             <img src="../assets/${firstname[0]}/${data.image}" alt="image">
           </a>
-          <div class="gallery__img__desc">
+          <div class="desc">
             <div>
             <p>${data.title}</p>
             </div>
