@@ -153,7 +153,7 @@ class Photographer {
   dropBtn = () => {
     const dropBtn = document.getElementById("dropBtn");
     const myDropDown = document.getElementById("myDropdown");
-    const options = document.querySelectorAll('.option')
+    const options = document.querySelectorAll(".option");
 
     dropBtn.addEventListener("click", () => {
       myDropDown.classList.toggle("show");
@@ -166,25 +166,28 @@ class Photographer {
     });
 
     options.forEach((option) => {
-      option.addEventListener('click', (e) => {
-        console.log(option.textContent);
-        e.preventDefault()
-        this.filteredMedia()
-      })
-    })
+      option.addEventListener("click", (e) => {
+        this.filteredMedia();
+      });
+    });
   };
 
   filteredMedia = (option) => {
     switch (option) {
       case "Date":
-      console.log("date");
+        option = "Date"
+          ? console.log("date")
+          : console.log("zidane");
         break;
       case "titre":
-        console.log("title");
+        option = "Titre"
+          ? console.log("titre")
+          : console.log("nique ta race");
         break;
       default:
-        console.log("popularity");
-        
+        option = "Popularité"
+          ? console.log("pop")
+          : console.log("c la fin frr");
         break;
     }
   };
