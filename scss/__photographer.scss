@@ -122,6 +122,10 @@
     align-items: center;
     text-align: center;
   }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   overflow-y: hidden;
 
   padding-bottom: 5em;
@@ -130,14 +134,12 @@
     margin: 3em 0;
     width: 350px;
     height: 300px;
+
     & img {
       @media screen and (max-width: 768px) {
         justify-content: center;
       }
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+
       height: 100%;
       width: 100%;
       border-radius: 5px;

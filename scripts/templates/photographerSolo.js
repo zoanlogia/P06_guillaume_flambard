@@ -31,7 +31,7 @@ export class PhotographerSolo {
     div.innerHTML = content;
     return div;
   }
-  
+
   createFilter() {
     const div = document.createElement("div");
     div.classList.add("dropdown-container");
@@ -50,13 +50,12 @@ export class PhotographerSolo {
   }
 
   createGallery(mediaToShow) {
-
     const firstname = this._photographer.info.name.split(" ");
-    
+
     const isGalleryAlreadyHere = document.querySelector(".gallery");
-    
-    let div
-    
+
+    let div;
+
     if (isGalleryAlreadyHere) {
       div = isGalleryAlreadyHere;
     } else {
@@ -64,12 +63,12 @@ export class PhotographerSolo {
       div.classList.add("gallery");
       console.log(div);
     }
-    
+
     const medias = mediaToShow ? mediaToShow : this._photographer.medias;
-    
+
     console.log(medias);
-    
     let dom = "";
+
     medias.forEach((data) => {
       if (data.image) {
         dom += `
@@ -107,7 +106,7 @@ export class PhotographerSolo {
         </div>
         `;
       }
-      div.innerHTML = dom
+      div.innerHTML = dom;
     });
     return div;
   }

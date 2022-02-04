@@ -241,6 +241,10 @@ header {
       display: block; }
 
 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   overflow-y: hidden;
   padding-bottom: 5em; }
   @media screen and (max-width: 768px) {
@@ -255,10 +259,6 @@ header {
     width: 350px;
     height: 300px; }
     .gallery .medias-container img {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
       height: 100%;
       width: 100%;
       border-radius: 5px;
