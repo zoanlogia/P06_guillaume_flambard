@@ -52,24 +52,25 @@ export class PhotographerSolo {
   createGallery(mediaToShow) {
 
     const firstname = this._photographer.info.name.split(" ");
-
+    
     const isGalleryAlreadyHere = document.querySelector(".gallery");
-
+    
     let div
-
+    
     if (isGalleryAlreadyHere) {
       div = isGalleryAlreadyHere;
     } else {
       div = document.createElement("div");
       div.classList.add("gallery");
+      console.log(div);
     }
-
+    
     const medias = mediaToShow ? mediaToShow : this._photographer.medias;
-
+    
     console.log(medias);
     
+    let dom = "";
     medias.forEach((data) => {
-      let dom = "";
       if (data.image) {
         dom += `
         <div class="medias-container">
@@ -96,7 +97,7 @@ export class PhotographerSolo {
               <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
             </video>
           </a>
-          <div class="gallery__img__desc">
+          <div class="desc">
             <div class="heart-container">
               <span>${data.likes}</span>
               <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
