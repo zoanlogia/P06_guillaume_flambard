@@ -8,6 +8,8 @@ class App {
       ".photographer_section",
     );
     this.photographersApi = new PhotographersApi("/data/photographers.json");
+    this.Data = null
+    this.TemplateSolo
   }
 
   async init() {

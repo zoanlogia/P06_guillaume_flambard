@@ -61,12 +61,10 @@ export class PhotographerSolo {
     } else {
       div = document.createElement("div");
       div.classList.add("gallery");
-      console.log(div);
     }
 
     const medias = mediaToShow ? mediaToShow : this._photographer.medias;
 
-    console.log(medias);
     let dom = "";
 
     medias.forEach((data) => {
@@ -135,7 +133,7 @@ export class PhotographerSolo {
 
   createModal() {
     const html = document.createElement("div");
-    html.innerHTML = `
+    html.innerHTML =  `
       <div class="modal" id="myModal">
         <div class="modal-content">
           <div class="title">
@@ -148,16 +146,16 @@ export class PhotographerSolo {
             <input type="text" id="name" name="name" />
             <p class="error">Veuillez renseigner un prénom valide</p>
             <label for="lastname">Nom</label>
-            <input type="text" id="lastname" name="lastname"/>
+            <input type="text" id="lastname" name="lastname" />
             <p class="error">Veuillez renseigner un nom valide</p>
             <label for="mail">Email</label>
             <input type="mail" id="mail" name="name" />
-            <p class="error">Veuillez renseigner un email valide </p>
+            <p class="error">Veuillez renseigner un email valide</p>
             <label for="message">Votre message</label>
             <textarea type="textarea" id="message" name="message"></textarea>
             <div class="confirmation">Votre demande a bien été envoyée !</div>
             <button form="form1" type="submit">Envoyer</button>
-            </form>
+          </form>
         </div>
       </div>
     `;

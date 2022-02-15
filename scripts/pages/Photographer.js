@@ -9,6 +9,8 @@ class Photographer {
       ".photographer_solo_section",
     );
     this.photographersApi = new PhotographersApi("/data/photographers.json");
+    this.Data = null;
+    this.Templatesolo = null;
   }
 
   async init() {
@@ -18,8 +20,10 @@ class Photographer {
     const onePhotographerData = await this.photographersApi.getOnePhotographer(
       id,
     );
+    this.Data = onePhotographerData;
 
     const TemplateSolo = new PhotographerSolo(onePhotographerData);
+    this.Templatesolo = TemplateSolo;
 
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
     this.$photographerSoloSection.appendChild(TemplateSolo.createFilter());
@@ -166,30 +170,31 @@ class Photographer {
     });
 
     options.forEach((option) => {
-      option.addEventListener("click", (e) => {
-        this.filteredMedia();
+      option.addEventListener("click", () => {
+        this.filteredMedia(option);
       });
     });
   };
 
   filteredMedia = (option) => {
-    switch (option) {
-      case "Date":
-        option = "Date"
-          ? console.log("date")
-          : console.log("zidane");
+    // console.log(this.Data);
+    const medias = this.Data.medias;
+
+    switch (option.textContent.toLowerCase()) {
+      case "date":
+        // réécriture de la dropdown
+        medias.sort((a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""))
         break;
       case "titre":
-        option = "Titre"
-          ? console.log("titre")
-          : console.log("nique ta race");
+        medias.sort((a, b) => a.title.localeCompare(b.title))
         break;
       default:
-        option = "Popularité"
-          ? console.log("pop")
-          : console.log("c la fin frr");
+        console.log("pop");
         break;
     }
+    this.$photographerSoloSection.appendChild(
+      this.Templatesolo.createGallery(medias),
+    );
   };
 }
 
