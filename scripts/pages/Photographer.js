@@ -187,9 +187,11 @@ class Photographer {
         break;
       case "titre":
         medias.sort((a, b) => a.title.localeCompare(b.title))
+        console.log(medias);
         break;
       default:
-        console.log("pop");
+        medias.sort((a, b) => a.likes.localeCompare(b.likes))
+        console.log(medias);
         break;
     }
     this.$photographerSoloSection.appendChild(
