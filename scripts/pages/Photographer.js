@@ -76,8 +76,8 @@ class Photographer {
 
   myModal = () => {
     const modal = document.getElementById("myModal");
-    const btn = document.getElementById("myBtn");
     const span = document.getElementsByClassName("close")[0];
+    const btn = document.getElementById("myBtn");
 
     btn.addEventListener("click", () => {
       modal.style.display = "block";
@@ -179,19 +179,27 @@ class Photographer {
   filteredMedia = (option) => {
     // console.log(this.Data);
     const medias = this.Data.medias;
+    const icon = document.createElement('i')
+    icon.classList.add('fas', 'fa-angle-down')
+    
+
 
     switch (option.textContent.toLowerCase()) {
       case "date":
         // réécriture de la dropdown
-        medias.sort((a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""))
+        medias.sort(
+          (a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""),
+        );
+        dropBtn.textContent = "Date";
+        dropBtn.append(icon)
         break;
       case "titre":
-        medias.sort((a, b) => a.title.localeCompare(b.title))
-        console.log(medias);
+        medias.sort((a, b) => (a.title ? 1 : a.title === b.title ? 0 : -1));
+        dropBtn.textContent = "Titre";
+        dropBtn.append(icon);
         break;
       default:
-        medias.sort((a, b) => a.likes.localeCompare(b.likes))
-        console.log(medias);
+        medias;
         break;
     }
     this.$photographerSoloSection.appendChild(
