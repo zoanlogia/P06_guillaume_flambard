@@ -134,7 +134,7 @@ export class PhotographerSolo {
 
   createModal() {
     const html = document.createElement("div");
-    html.innerHTML =  `
+    html.innerHTML = `
       <div class="modal" id="myModal">
         <div class="modal-content">
           <div class="title">

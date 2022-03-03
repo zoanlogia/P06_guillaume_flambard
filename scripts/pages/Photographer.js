@@ -184,8 +184,6 @@ class Photographer {
     let copyBtn = dropBtn.textContent;
     let li = document.createElement("li");
     const icon = document.createElement("i");
-    
-    icon.classList.add("fas", "fa-angle-down", "margin-left");
 
     switch (option.textContent.toLowerCase()) {
       case "date":
@@ -193,39 +191,19 @@ class Photographer {
         medias.sort(
           (a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""),
         );
-        
-         li.classList.add("option");
-         li.textContent = copyBtn;
-         myDropDown.append(li);
-         dropBtn.textContent = option.textContent;
-         dropBtn.append(icon);
-         option.remove();
+        this.copy(option);
         break;
       case "titre":
         medias.sort((a, b) =>
           a.title > b.title ? 1 : a.title === b.title ? 0 : -1,
         );
-        
-        
-         li.classList.add("option");
-         li.textContent = copyBtn;
-         myDropDown.append(li);
-         dropBtn.textContent = option.textContent;
-         dropBtn.append(icon);
-         option.remove();
+        this.copy(option);
         break;
       case "popularité":
         medias.sort((a, b) =>
           a.likes > b.likes ? 1 : a.likes === b.likes ? 0 : -1,
         );
-        
-        
-         li.classList.add("option");
-         li.textContent = copyBtn;
-         myDropDown.append(li);
-         dropBtn.textContent = option.textContent;
-         dropBtn.append(icon);
-         option.remove();
+        this.copy(option);
         break;
       default:
       case "tous":
@@ -236,6 +214,26 @@ class Photographer {
     this.$photographerSoloSection.appendChild(
       this.Templatesolo.createGallery(medias),
     );
+  };
+
+  copy = (option) => {
+    const myDropDown = document.getElementById("myDropdown");
+    const dropBtn = document.getElementById("dropBtn");
+    let copyBtn = dropBtn.textContent;
+    let li = document.createElement("li");
+    const icon = document.createElement("i");
+
+    icon.classList.add("fas", "fa-angle-down", "margin-left");
+
+    while (copyBtn !== option.textContent) {
+      li.classList.add("option");
+      li.textContent = copyBtn;
+      myDropDown.append(li);
+      dropBtn.textContent = option.textContent;
+      dropBtn.append(icon);
+      option.remove();
+      break;
+    }
   };
 }
 
