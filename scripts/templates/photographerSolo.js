@@ -10,7 +10,7 @@ export class PhotographerSolo {
     const content = `
       <header class="photographer-header">
         <a href="index.html">
-          <img src="assets/images/logo.png" class="logo" alt="logo" />
+          <img src="assets/images/logo.png" class="logo" alt="logo" loading="lazy" />
         </a>
       </header>
       <section class="presentation">
@@ -25,6 +25,7 @@ export class PhotographerSolo {
         <img
           src="assets/photographers/${this._photographer.info.portrait}"
           alt="${this._photographer.info.name}"
+          loading="lazy"
         />
       </section>
     `;
@@ -73,7 +74,7 @@ export class PhotographerSolo {
         dom += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.image}">
-            <img src="../assets/${firstname[0]}/${data.image}" alt="image">
+            <img src="../assets/${firstname[0]}/${data.image}" alt="image" loading="lazy">
           </a>
           <div class="desc">
             <div>
@@ -92,7 +93,7 @@ export class PhotographerSolo {
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.video}">
             <video controls class="video">
-              <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4">
+              <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4" loading="lazy">
             </video>
           </a>
           <div class="desc">
