@@ -155,8 +155,8 @@ class Photographer {
   };
 
   dropBtn = () => {
-    const dropBtn = document.getElementById("dropBtn");
     const myDropDown = document.getElementById("myDropdown");
+    const dropBtn = document.getElementById("dropBtn");
     const options = document.querySelectorAll(".option");
 
     dropBtn.addEventListener("click", () => {
@@ -179,10 +179,13 @@ class Photographer {
   filteredMedia = (option) => {
     // console.log(this.Data);
     const medias = this.Data.medias;
-    const icon = document.createElement('i')
-    icon.classList.add('fas', 'fa-angle-down')
+    const myDropDown = document.getElementById("myDropdown");
+    const dropBtn = document.getElementById("dropBtn");
+    let copyBtn = dropBtn.textContent;
+    let li = document.createElement("li");
+    const icon = document.createElement("i");
     
-
+    icon.classList.add("fas", "fa-angle-down", "margin-left");
 
     switch (option.textContent.toLowerCase()) {
       case "date":
@@ -190,18 +193,46 @@ class Photographer {
         medias.sort(
           (a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""),
         );
-        dropBtn.textContent = "Date";
-        dropBtn.append(icon)
+        
+         li.classList.add("option");
+         li.textContent = copyBtn;
+         myDropDown.append(li);
+         dropBtn.textContent = option.textContent;
+         dropBtn.append(icon);
+         option.remove();
         break;
       case "titre":
-        medias.sort((a, b) => (a.title ? 1 : a.title === b.title ? 0 : -1));
-        dropBtn.textContent = "Titre";
-        dropBtn.append(icon);
+        medias.sort((a, b) =>
+          a.title > b.title ? 1 : a.title === b.title ? 0 : -1,
+        );
+        
+        
+         li.classList.add("option");
+         li.textContent = copyBtn;
+         myDropDown.append(li);
+         dropBtn.textContent = option.textContent;
+         dropBtn.append(icon);
+         option.remove();
+        break;
+      case "popularité":
+        medias.sort((a, b) =>
+          a.likes > b.likes ? 1 : a.likes === b.likes ? 0 : -1,
+        );
+        
+        
+         li.classList.add("option");
+         li.textContent = copyBtn;
+         myDropDown.append(li);
+         dropBtn.textContent = option.textContent;
+         dropBtn.append(icon);
+         option.remove();
         break;
       default:
+      case "tous":
         medias;
         break;
     }
+
     this.$photographerSoloSection.appendChild(
       this.Templatesolo.createGallery(medias),
     );

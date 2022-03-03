@@ -232,8 +232,10 @@ header {
     .dropdown-container .dropdown .dropdown-content li:nth-child(1) {
       border-top: 1px solid white;
       border-bottom: 1px solid white; }
-    .dropdown-container .dropdown .dropdown-content li:nth-child(2):hover {
+    .dropdown-container .dropdown .dropdown-content li:nth-child(3):hover {
       border-radius: 0 0 5px 5px; }
+    .dropdown-container .dropdown .dropdown-content li:nth-child(2) {
+      border-bottom: 1px solid white; }
     .dropdown-container .dropdown .dropdown-content li:hover {
       background-color: #db8876;
       color: black; }
@@ -298,6 +300,9 @@ header {
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer; }
+
+.margin-left {
+  margin-left: 1em; }
 
 /** @format */
 .lightbox {

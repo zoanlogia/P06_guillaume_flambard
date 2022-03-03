@@ -98,9 +98,13 @@
       border-top: 1px solid white;
       border-bottom: 1px solid white;
     }
-    .dropdown-content li:nth-child(2):hover {
+    .dropdown-content li:nth-child(3):hover {
       border-radius: 0 0 5px 5px;
     }
+    & .dropdown-content li:nth-child(2) {
+      border-bottom: 1px solid white;
+    }
+ 
 
     /* Change color of dropdown links on hover */
     .dropdown-content li:hover {
@@ -188,4 +192,8 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.margin-left {
+  margin-left: 1em;
 }
