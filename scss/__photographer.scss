@@ -8,11 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
   background-color: #fafafa;
   justify-content: center;
   text-align: center;
-  @media screen and (min-width: 1800px) {
+  @media screen and (min-width: 1200px) {
     text-align: left;
+    flex-direction: row;
     height: 300px;
     padding: 0 5em;
     justify-content: space-between;
@@ -59,6 +61,12 @@
     position: relative;
     display: inline-block;
     margin-left: 1em;
+
+    &.open {
+      .fas.fa-angle-down {
+        transform: rotate(180deg);
+      }
+    }
 
     & .dropbtn {
       background-color: #911c1c;
@@ -112,8 +120,13 @@
     }
 
     /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-    .show {
-      display: block;
+    #myDropdown{
+      border-radius: 5px;
+
+        &.show {
+        display: block;
+        border-radius: 0 0 5px 5px;
+      }
     }
   }
 }

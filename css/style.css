@@ -160,12 +160,14 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
   background-color: #fafafa;
   justify-content: center;
   text-align: center; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     .presentation {
       text-align: left;
+      flex-direction: row;
       height: 300px;
       padding: 0 5em;
       justify-content: space-between; } }
@@ -204,6 +206,8 @@ header {
     /* Links inside the dropdown */
     /* Change color of dropdown links on hover */
     /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */ }
+    .dropdown-container .dropdown.open .fas.fa-angle-down {
+      transform: rotate(180deg); }
     .dropdown-container .dropdown .dropbtn {
       background-color: #911c1c;
       color: white;
@@ -239,8 +243,11 @@ header {
     .dropdown-container .dropdown .dropdown-content li:hover {
       background-color: #db8876;
       color: black; }
-    .dropdown-container .dropdown .show {
-      display: block; }
+    .dropdown-container .dropdown #myDropdown {
+      border-radius: 5px; }
+      .dropdown-container .dropdown #myDropdown.show {
+        display: block;
+        border-radius: 0 0 5px 5px; }
 
 .gallery {
   display: flex;

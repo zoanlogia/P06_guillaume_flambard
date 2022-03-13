@@ -11,6 +11,7 @@ export class Lightbox {
         'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"]',
       ),
     );
+    
     const gallery = links.map(link => link.getAttribute("href"))
     links.forEach(link =>
       link.addEventListener("click", (e) => {

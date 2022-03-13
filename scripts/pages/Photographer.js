@@ -155,86 +155,69 @@ class Photographer {
   };
 
   dropBtn = () => {
-    const myDropDown = document.getElementById("myDropdown");
-    const dropBtn = document.getElementById("dropBtn");
-    const options = document.querySelectorAll(".option");
-
-    dropBtn.addEventListener("click", () => {
-      myDropDown.classList.toggle("show");
-
-      if (myDropDown.classList.contains("show")) {
-        myDropDown.style.borderRadius = "0 0 5px 5px";
-      } else {
-        dropBtn.style.borderRadius = "5px";
-      }
-    });
+    const dropdown = document.querySelector('.dropdown')
+    const dropBtn = dropdown.querySelector("#dropBtn");
+    const myDropdown = dropdown.querySelector("#myDropdown");
+    const options = dropdown.querySelectorAll("li.option");
 
     options.forEach((option) => {
       option.addEventListener("click", () => {
-        this.filteredMedia(option);
+        this.filteredMedia(option.innerHTML);
       });
+    })
+
+    dropBtn.addEventListener("click", () => {
+      dropdown.classList.toggle('open');
+      const selectedFilter = dropBtn.querySelector('span').innerHTML;
+      
+      options.forEach((option) => {
+        if (option.innerHTML == selectedFilter) {
+          option.style.display = "none";
+        } else {
+          option.style.display = 'block';
+        }
+      })
+      myDropdown.classList.toggle("show");
     });
   };
 
-  filteredMedia = (option) => {
-    // console.log(this.Data);
-    const medias = this.Data.medias;
-    const myDropDown = document.getElementById("myDropdown");
+  filteredMedia = (clickedFilter) => {
+    const dropdown = document.querySelector('.dropdown')
+    const myDropdown = dropdown.querySelector("#myDropdown");
     const dropBtn = document.getElementById("dropBtn");
-    let copyBtn = dropBtn.textContent;
-    let li = document.createElement("li");
-    const icon = document.createElement("i");
 
-    switch (option.textContent.toLowerCase()) {
+    myDropdown.classList.toggle("show");
+    dropdown.classList.remove('open');
+
+    dropBtn.querySelector('span').innerHTML = clickedFilter
+    
+    const medias = this.Data.medias;
+
+    switch (clickedFilter.toLowerCase()) {
       case "date":
         // réécriture de la dropdown
         medias.sort(
           (a, b) => b.date.replaceAll("-", "") - a.date.replaceAll("-", ""),
         );
-        this.copy(option);
         break;
       case "titre":
         medias.sort((a, b) =>
           a.title > b.title ? 1 : a.title === b.title ? 0 : -1,
         );
-        this.copy(option);
         break;
       case "popularité":
         medias.sort((a, b) =>
           a.likes > b.likes ? 1 : a.likes === b.likes ? 0 : -1,
         );
-        this.copy(option);
-        break;
-      default:
-      case "tous":
-        medias;
         break;
     }
 
     this.$photographerSoloSection.appendChild(
       this.Templatesolo.createGallery(medias),
     );
+    this.likesHandler();
   };
 
-  copy = (option) => {
-    const myDropDown = document.getElementById("myDropdown");
-    const dropBtn = document.getElementById("dropBtn");
-    let copyBtn = dropBtn.textContent;
-    let li = document.createElement("li");
-    const icon = document.createElement("i");
-
-    icon.classList.add("fas", "fa-angle-down", "margin-left");
-
-    while (copyBtn !== option.textContent) {
-      li.classList.add("option");
-      li.textContent = copyBtn;
-      myDropDown.append(li);
-      dropBtn.textContent = option.textContent;
-      dropBtn.append(icon);
-      option.remove();
-      break;
-    }
-  };
 }
 
 const page = new Photographer();

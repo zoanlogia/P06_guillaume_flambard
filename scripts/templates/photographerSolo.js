@@ -39,7 +39,7 @@ export class PhotographerSolo {
     const content = `
      <p>Trier par</p>
         <div class="dropdown">
-          <button id="dropBtn" class="dropbtn">Tous<i class="fas fa-angle-down margin-left"></i></button>
+          <button id="dropBtn" class="dropbtn"><span>Popularité</span><i class="fas fa-angle-down margin-left"></i></button>
           <ul id="myDropdown" class="dropdown-content option">
             <li class="option">Popularité</li>
             <li class="option">Date</li>
