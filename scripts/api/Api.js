@@ -1,4 +1,5 @@
 class Api {
+  
   /**
    * @param {string} url
    */
@@ -8,9 +9,9 @@ class Api {
 
   async getPhotographers() {
     return fetch(this._url)
-      .then((res) => res.json())
-      .then((res) => res.data)
-      .catch((err) => console.log("an error occurs", err));
+        .then((res) => res.json())
+        .then((res) => res.data)
+        .catch((err) => console.log("an error occurs", err));
   }
 
   async getPhotographerByID(id) {
@@ -27,7 +28,7 @@ class Api {
 
     for (let i = 0; i < photographerList.length; i++) {
       const info = photographerList[i];
-      if (info.id == id) {
+      if (info.id === id) {
         detail.info = info;
         // console.log(info);
       }
@@ -35,6 +36,7 @@ class Api {
 
     for (let i = 0; i < mediaList.length; i++) {
       const medias = mediaList[i];
+      medias.photographerId = undefined;
       if (medias.photographerId == id) {
         detail.medias.push(medias);
         // console.log(medias);

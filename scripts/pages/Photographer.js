@@ -66,7 +66,6 @@ class Photographer {
     let ttx = 0;
 
     span.forEach((like) => {
-      console.log(like.innerHTML);
       ttx += parseInt(like.innerHTML);
     });
 
@@ -88,7 +87,7 @@ class Photographer {
     });
 
     window.addEventListener("click", (e) => {
-      if (e.target == modal) {
+      if (e.target === modal) {
         modal.style.display = "none";
       }
     });
@@ -101,7 +100,7 @@ class Photographer {
     const mail = document.getElementById("mail");
     const error = document.getElementsByClassName("error");
     const regex =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const STATE = {
       name: "",
@@ -171,7 +170,7 @@ class Photographer {
       const selectedFilter = dropBtn.querySelector('span').innerHTML;
       
       options.forEach((option) => {
-        if (option.innerHTML == selectedFilter) {
+        if (option.innerHTML === selectedFilter) {
           option.style.display = "none";
         } else {
           option.style.display = 'block';
