@@ -2,7 +2,8 @@
 
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographerSolo } from "../templates/photographerSolo.js";
-import { Lightbox } from "../api/lightbox.js";
+import {Lightbox} from "../api/lightbox.js"
+
 
 class Photographer {
   constructor() {
@@ -12,7 +13,6 @@ class Photographer {
     this.photographersApi = new PhotographersApi("/data/photographers.json");
     this.Data = null;
     this.Templatesolo = null;
-    this.Lightbox = null
   }
 
   async init() {
@@ -26,7 +26,6 @@ class Photographer {
 
     const TemplateSolo = new PhotographerSolo(onePhotographerData);
     this.Templatesolo = TemplateSolo;
-    this.Lightbox = Lightbox
 
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
     this.$photographerSoloSection.appendChild(TemplateSolo.createFilter());
@@ -37,6 +36,7 @@ class Photographer {
     this.myModal();
     this.msgError();
     this.dropBtn();
+    Lightbox.init()
   }
 
   likesHandler = () => {
@@ -223,3 +223,4 @@ class Photographer {
 
 const page = new Photographer();
 page.init();
+

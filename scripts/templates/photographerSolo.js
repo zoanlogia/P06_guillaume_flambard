@@ -1,5 +1,3 @@
-/** @format */
-
 export class PhotographerSolo {
   constructor(photographer) {
     this._photographer = photographer;
