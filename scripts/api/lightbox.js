@@ -8,7 +8,7 @@ export class Lightbox {
   static init() {
     const links = Array.from(
       document.querySelectorAll(
-        'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"]',
+        'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".mp4"]'
       ),
     );
     

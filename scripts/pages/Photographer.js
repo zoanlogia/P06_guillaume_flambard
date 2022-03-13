@@ -2,6 +2,7 @@
 
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographerSolo } from "../templates/photographerSolo.js";
+import { Lightbox } from "../api/lightbox.js";
 
 class Photographer {
   constructor() {
@@ -11,6 +12,7 @@ class Photographer {
     this.photographersApi = new PhotographersApi("/data/photographers.json");
     this.Data = null;
     this.Templatesolo = null;
+    this.Lightbox = null
   }
 
   async init() {
@@ -24,6 +26,7 @@ class Photographer {
 
     const TemplateSolo = new PhotographerSolo(onePhotographerData);
     this.Templatesolo = TemplateSolo;
+    this.Lightbox = Lightbox
 
     this.$photographerSoloSection.appendChild(TemplateSolo.createHeader());
     this.$photographerSoloSection.appendChild(TemplateSolo.createFilter());
@@ -34,7 +37,6 @@ class Photographer {
     this.myModal();
     this.msgError();
     this.dropBtn();
-    // this.filter()
   }
 
   likesHandler = () => {
@@ -155,7 +157,7 @@ class Photographer {
   };
 
   dropBtn = () => {
-    const dropdown = document.querySelector('.dropdown')
+    const dropdown = document.querySelector(".dropdown");
     const dropBtn = dropdown.querySelector("#dropBtn");
     const myDropdown = dropdown.querySelector("#myDropdown");
     const options = dropdown.querySelectorAll("li.option");
@@ -164,33 +166,33 @@ class Photographer {
       option.addEventListener("click", () => {
         this.filteredMedia(option.innerHTML);
       });
-    })
+    });
 
     dropBtn.addEventListener("click", () => {
-      dropdown.classList.toggle('open');
-      const selectedFilter = dropBtn.querySelector('span').innerHTML;
-      
+      dropdown.classList.toggle("open");
+      const selectedFilter = dropBtn.querySelector("span").innerHTML;
+
       options.forEach((option) => {
         if (option.innerHTML == selectedFilter) {
           option.style.display = "none";
         } else {
-          option.style.display = 'block';
+          option.style.display = "block";
         }
-      })
+      });
       myDropdown.classList.toggle("show");
     });
   };
 
   filteredMedia = (clickedFilter) => {
-    const dropdown = document.querySelector('.dropdown')
+    const dropdown = document.querySelector(".dropdown");
     const myDropdown = dropdown.querySelector("#myDropdown");
     const dropBtn = document.getElementById("dropBtn");
 
     myDropdown.classList.toggle("show");
-    dropdown.classList.remove('open');
+    dropdown.classList.remove("open");
 
-    dropBtn.querySelector('span').innerHTML = clickedFilter
-    
+    dropBtn.querySelector("span").innerHTML = clickedFilter;
+
     const medias = this.Data.medias;
 
     switch (clickedFilter.toLowerCase()) {
@@ -217,7 +219,6 @@ class Photographer {
     );
     this.likesHandler();
   };
-
 }
 
 const page = new Photographer();
