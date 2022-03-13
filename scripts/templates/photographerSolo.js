@@ -89,8 +89,6 @@ export class PhotographerSolo {
         </div>
         `;
       } else {
-        data.title = data.video.split('.mp4')[0].replaceAll('_', ' ');
-        
         dom += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.video}">
@@ -99,7 +97,6 @@ export class PhotographerSolo {
             </video>
           </a>
           <div class="desc">
-          <div><p>${data.title}</p></div>
             <div class="heart-container">
               <span>${data.likes}</span>
               <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
