@@ -164,7 +164,7 @@ header {
   background-color: #fafafa;
   justify-content: center;
   text-align: center; }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1300px) {
     .presentation {
       text-align: left;
       flex-direction: row;
