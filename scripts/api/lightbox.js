@@ -1,4 +1,6 @@
-import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js'
+/** @format */
+
+import { enableBodyScroll, disableBodyScroll } from "./body-scroll-lock.js";
 /**
  * @property {HTMLElement} element
  * @property {string[]} images chemin des images la lightbox
@@ -8,12 +10,12 @@ export class Lightbox {
   static init() {
     const links = Array.from(
       document.querySelectorAll(
-        'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".mp4"]'
+        'a[href$=".jpg"], a[href$=".png"], a[href$=".jpeg"], a[href$=".mp4"]',
       ),
     );
-    
-    const gallery = links.map(link => link.getAttribute("href"))
-    links.forEach(link =>
+
+    const gallery = links.map((link) => link.getAttribute("href"));
+    links.forEach((link) =>
       link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(e.currentTarget.getAttribute("href"), gallery);
@@ -27,7 +29,7 @@ export class Lightbox {
    */
   constructor(url, images) {
     this.element = this.buildDOM(url);
-    this.images = images
+    this.images = images;
     this.loadImage(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
@@ -42,11 +44,11 @@ export class Lightbox {
 
   loadImage(url) {
     this.url = null;
-    const image = new Image();
+    let image = new Image();
     const container = this.element.querySelector(".lightbox__container");
     const loader = document.createElement("div");
     loader.classList.add("lightbox__loader");
-    container.innerHTML = ''
+    container.innerHTML = "";
     container.appendChild(loader);
     image.onload = () => {
       container.removeChild(loader);
@@ -63,12 +65,10 @@ export class Lightbox {
   onKeyUp(e) {
     if (e.key === "Escape") {
       this.close(e);
-    }
-    else if (e.key === "ArrowLeft") {
-      this.prev(e)
-    }
-    else if (e.key === "ArrowRight") {
-      this.next(e)
+    } else if (e.key === "ArrowLeft") {
+      this.prev(e);
+    } else if (e.key === "ArrowRight") {
+      this.next(e);
     }
   }
   /**
@@ -78,7 +78,7 @@ export class Lightbox {
   close(e) {
     e.preventDefault();
     this.element.classList.add("fadeOut");
-    enableBodyScroll(this.element)
+    enableBodyScroll(this.element);
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
     }, 500);
@@ -90,19 +90,19 @@ export class Lightbox {
    */
   next(e) {
     e.preventDefault();
-    let i = this.images.findIndex(image => image === this.url)
+    let i = this.images.findIndex((image) => image === this.url);
     if (i === this.images.length - 1) {
-      i = -1
+      i = -1;
     }
-    this.loadImage(this.images[i + 1])
+    this.loadImage(this.images[i + 1]);
   }
   prev(e) {
     e.preventDefault();
-    let i = this.images.findIndex(image => image === this.url);
+    let i = this.images.findIndex((image) => image === this.url);
     if (i === 0) {
-      i = this.images.length
+      i = this.images.length;
     }
-    this.loadImage(this.images[i - 1])
+    this.loadImage(this.images[i - 1]);
   }
   /**
    *

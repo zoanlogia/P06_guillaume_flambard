@@ -104,7 +104,7 @@ export class PhotographerSolo {
             </div>
           </div>
         </div>
-        `
+        `;
       }
       div.innerHTML = dom;
     });
