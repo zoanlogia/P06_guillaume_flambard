@@ -1,4 +1,8 @@
+<<<<<<< HEAD:scripts/api/lightbox.js
 import { enableBodyScroll, disableBodyScroll } from '../api/body-scroll-lock.js'
+=======
+import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js'
+>>>>>>> parent of 96217ae (add the titles for the videos):scripts/pages/lightbox.js
 /**
  * @property {HTMLElement} element
  * @property {string[]} images chemin des images la lightbox
