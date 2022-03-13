@@ -1,5 +1,4 @@
-import { enableBodyScroll, disableBodyScroll } from '../api/body-scroll-lock.js'
-
+import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js'
 /**
  * @property {HTMLElement} element
  * @property {string[]} images chemin des images la lightbox
