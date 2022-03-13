@@ -405,8 +405,10 @@ header {
     background-color: #db8876;
     border-radius: 5px;
     margin: 15% auto;
-    padding: 10px 20px;
-    width: 40%; }
+    padding: 10px 20px; }
+    @media screen and (min-width: 768px) {
+      #myModal .modal-content {
+        width: 40%; } }
     #myModal .modal-content h2 {
       font-weight: 400;
       font-size: 42px;
