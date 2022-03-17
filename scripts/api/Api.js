@@ -7,6 +7,7 @@ class Api {
   }
 
   async getPhotographers() {
+    
     return fetch(this._url)
       .then((res) => res.json())
       .then((res) => res.data)

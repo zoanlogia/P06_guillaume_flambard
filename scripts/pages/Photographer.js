@@ -218,6 +218,7 @@ class Photographer {
       this.Templatesolo.createGallery(medias),
     );
     this.likesHandler();
+    Lightbox.init()
   };
 }
 
