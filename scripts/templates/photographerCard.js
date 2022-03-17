@@ -4,7 +4,6 @@ export class PhotographersCard {
   }
 
   createPhotographersCard() {
-    console.log('coucou');
     const section = document.createElement("div");
     section.classList.add("container-card");
     const dateUnit = "jour";
@@ -12,7 +11,7 @@ export class PhotographersCard {
     const photographersCard = `
     <article>
       <a href="photographer.html?id=${this._photographers.id}">
-        <img class="photographer_img" src="${this._photographers.portrait}" alt="${this._photographers.name}"/>
+        <img class="photographer_img" src="${this._photographers.portrait}" alt="${this._photographers.name}" loading="lazy"/>
           <h2>${this._photographers.name}</h2>
       </a>
       <p class="photographer_city">${this._photographers.city}, ${this._photographers.country}</p>

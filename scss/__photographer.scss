@@ -1,0 +1,212 @@
+/** @format */
+
+#contact_modal {
+  display: none;
+}
+
+.presentation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa;
+  justify-content: center;
+  text-align: center;
+  @media screen and (min-width: 1300px) {
+    text-align: left;
+    flex-direction: row;
+    height: 300px;
+    padding: 0 5em;
+    justify-content: space-between;
+  }
+
+  & h1 {
+    color: #d3573c;
+    font-weight: 400;
+    font-size: 64px;
+  }
+
+  & h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #901c1c;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 1em 0;
+    color: #525252;
+  }
+
+  & img {
+    @include imgPhoto;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+  }
+}
+
+.dropdown-container {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+
+  & p {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 1em;
+
+    &.open {
+      .fas.fa-angle-down {
+        transform: rotate(180deg);
+      }
+    }
+
+    & .dropbtn {
+      background-color: #911c1c;
+      color: white;
+      padding: 16px 35px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    & .dropbtn:hover {
+      @include orangeHover;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    & .dropdown-content {
+      border-radius: 0 0 5px 5;
+      display: none;
+      position: absolute;
+      background-color: #911c1c;
+      width: 100%;
+      border: none;
+      z-index: 1;
+
+      & li {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    /* Links inside the dropdown */
+    & .dropdown-content li:nth-child(1) {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+    }
+    .dropdown-content li:nth-child(3):hover {
+      border-radius: 0 0 5px 5px;
+    }
+    & .dropdown-content li:nth-child(2) {
+      border-bottom: 1px solid white;
+    }
+ 
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content li:hover {
+      @include orangeHover;
+    }
+
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    #myDropdown{
+      border-radius: 5px;
+
+        &.show {
+        display: block;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}
+
+.gallery {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: hidden;
+
+  padding-bottom: 5em;
+
+  .medias-container {
+    margin: 3em 0;
+    width: 350px;
+    height: 300px;
+
+    & img {
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+      }
+
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .desc {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      & p {
+        color: #901c1c;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      & i {
+        color: #901c1c;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      & span {
+        color: #901c1c;
+        font-size: 20px;
+        position: relative;
+
+        &.icon-full {
+          visibility: hidden;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.margin-left {
+  margin-left: 1em;
+}

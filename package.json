@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2"
+  },
+  "name": "P06_guillaume_flambard",
+  "version": "1.0.0",
+  "description": "projet 6 openClassrooms",
+  "main": "index.html",
+  "repository": "https://github.com/zoanlogia/P06_guillaume_flambard.git",
+  "author": "zoanlogia <56681566+zoanlogia@users.noreply.github.com>",
+  "license": "MIT",
+  "browserslist": "last 4 versions",
+  "scripts": {
+    "start": "node-sass --watch scss/main.scss css/style.css -w --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/style.css"
+  }
+}

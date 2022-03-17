@@ -1,5 +1,3 @@
-/** @format */
-
 class Api {
   /**
    * @param {string} url
@@ -15,7 +13,7 @@ class Api {
       .catch((err) => console.log("an error occurs", err));
   }
 
-  async getPhotographers(id) {
+  async getPhotographerByID(id) {
     const data = await fetch(this._url);
     const response = await data.json();
     const photographerList = response.data;
@@ -25,29 +23,23 @@ class Api {
       info: [],
       medias: [],
     };
+    // console.log(detail);
 
     for (let i = 0; i < photographerList.length; i++) {
       const info = photographerList[i];
       if (info.id == id) {
         detail.info = info;
-      }
         // console.log(info);
-        detail.info.push(info);
+      }
     }
-    console.log(detail.info);
 
     for (let i = 0; i < mediaList.length; i++) {
       const medias = mediaList[i];
-      if (medias.id == id) {
-        detail.medias = medias;
+      if (medias.photographerId == id) {
+        detail.medias.push(medias);
+        // console.log(medias);
       }
-      // console.log(medias);
-      detail.medias.push(medias);
-      }
-      console.log(detail.medias);
-    // R2CUP2ER LES INFO
-    // BOUUUUUUUCLES !!!
-
+    }
     return detail;
   }
 }
@@ -65,6 +57,6 @@ export class PhotographersApi extends Api {
   }
 
   async getOnePhotographer(id) {
-    return await this.getPhotographers(id);
+    return await this.getPhotographerByID(id);
   }
 }

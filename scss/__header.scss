@@ -1,0 +1,31 @@
+/** @format */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    margin: 1em 0;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  & h1 {
+    color: #901c1c;
+  }
+  
+  & .logo {
+    height: 2.5em;
+  }
+}

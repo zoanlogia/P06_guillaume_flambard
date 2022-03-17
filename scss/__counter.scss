@@ -1,0 +1,23 @@
+/** @format */
+
+.counter {
+  position: fixed;
+  overflow-y: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 5px 5px 0 0;
+  right: 2em;
+  bottom: 0;
+  width: 20%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    right: 0;
+  }
+  
+  height: 3em;
+  background-color: #DB8876;
+  color: black;
+  text-align: center;
+}
