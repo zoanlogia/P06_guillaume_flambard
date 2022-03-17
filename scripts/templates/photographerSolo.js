@@ -61,6 +61,7 @@ export class PhotographerSolo {
     } else {
       div = document.createElement("div");
       div.classList.add("gallery");
+      div.setAttribute('id', 'gallery')
     }
 
     const medias = mediaToShow ? mediaToShow : this._photographer.medias;

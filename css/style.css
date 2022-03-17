@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /** @format */
+/** @format */
 ::-webkit-scrollbar {
   width: 7px; }
 
@@ -35,11 +36,11 @@ body {
   width: auto; }
 
 .container {
-  margin: 0 100px; }
-  @media screen and (max-width: 500px) {
+  padding: 0 50px; }
+  @media screen and (max-width: 700px) {
     .container {
       margin: 0;
-      padding: 0; } }
+      padding: 5px; } }
 
 .title {
   color: #901c1c;
@@ -66,7 +67,6 @@ button:hover {
   background-color: #db8876;
   color: black; }
 
-/** @format */
 /** @format */
 header {
   display: flex;
@@ -254,14 +254,11 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  overflow-y: hidden;
   padding-bottom: 5em; }
   @media screen and (max-width: 768px) {
     .gallery {
-      display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-around;
       text-align: center; } }
   .gallery .medias-container {
     margin: 3em 0;
@@ -346,7 +343,7 @@ header {
     left: 0;
     /* transform: rotate(180deg); */ }
   .lightbox__close {
-    background-color: transparent;
+    background-color: transparent !important;
     color: #901C1C;
     border: none;
     position: fixed;
@@ -354,8 +351,6 @@ header {
     right: 10px;
     cursor: pointer;
     z-index: 12; }
-    .lightbox__close :hover {
-      opacity: 0.8; }
   .lightbox__container {
     margin-right: 50px;
     margin-left: 50px;

@@ -1,6 +1,5 @@
 /** @format */
 
-import { enableBodyScroll, disableBodyScroll } from "./body-scroll-lock.js";
 /**
  * @property {HTMLElement} element
  * @property {string[]} images chemin des images la lightbox
@@ -33,7 +32,7 @@ export class Lightbox {
     this.loadMedia(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
-    disableBodyScroll(this.element);
+    // disableBodyScroll(this.element);
     document.addEventListener("keyup", this.onKeyUp);
   }
 
@@ -93,7 +92,7 @@ export class Lightbox {
   close(e) {
     e.preventDefault();
     this.element.classList.add("fadeOut");
-    enableBodyScroll(this.element);
+    // enableBodyScroll(this.element);
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
     }, 500);
