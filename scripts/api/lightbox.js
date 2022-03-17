@@ -30,7 +30,7 @@ export class Lightbox {
   constructor(url, images) {
     this.element = this.buildDOM(url);
     this.images = images;
-    this.loadImage(url);
+    this.loadMedia(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
     disableBodyScroll(this.element);
@@ -42,20 +42,35 @@ export class Lightbox {
    * @param {string} url URL de l'image
    */
 
-  loadImage(url) {
+  loadMedia(url) {
     this.url = null;
-    let image = new Image();
+    const regex = /\.([a-zA-Z0-9]+)$/;
+    const fileExt = url.match(regex)[1];
+
     const container = this.element.querySelector(".lightbox__container");
     const loader = document.createElement("div");
-    loader.classList.add("lightbox__loader");
-    container.innerHTML = "";
-    container.appendChild(loader);
-    image.onload = () => {
-      container.removeChild(loader);
-      container.appendChild(image);
-      this.url = url;
-    };
-    image.src = url;
+
+    if (fileExt == "mp4") {
+      const video = document.createElement("video");
+      video.src = url
+      video.controls = true
+
+      loader.classList.add('lighbox__loader')
+      container.innerHTML = ''
+      container.appendChild(video)
+      this.url = url
+    } else {
+      let image = new Image();
+      loader.classList.add("lightbox__loader");
+      container.innerHTML = "";
+      container.appendChild(loader);
+      image.onload = () => {
+        container.removeChild(loader);
+        container.appendChild(image);
+        this.url = url;
+      };
+      image.src = url;
+    }
   }
 
   /**
@@ -94,7 +109,7 @@ export class Lightbox {
     if (i === this.images.length - 1) {
       i = -1;
     }
-    this.loadImage(this.images[i + 1]);
+    this.loadMedia(this.images[i + 1]);
   }
   prev(e) {
     e.preventDefault();
@@ -102,7 +117,7 @@ export class Lightbox {
     if (i === 0) {
       i = this.images.length;
     }
-    this.loadImage(this.images[i - 1]);
+    this.loadMedia(this.images[i - 1]);
   }
   /**
    *
