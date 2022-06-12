@@ -1,5 +1,3 @@
-/** @format */
-
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographersData } from "../models/Photographers.js";
 import { PhotographersCard } from "../templates/photographerCard.js";

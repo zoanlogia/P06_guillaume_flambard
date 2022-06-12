@@ -121,7 +121,7 @@ export class Lightbox {
    * @param {string} url URL de l'image
    * @return {HTMLElement}
    */
-  buildDOM(url) {
+  buildDOM() {
     const dom = document.createElement("div");
     dom.classList.add("lightbox");
     dom.innerHTML = `<div class="lightbox">
