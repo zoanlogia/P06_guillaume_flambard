@@ -1,5 +1,7 @@
+/** @format */
+
 import { PhotographersApi } from "../api/Api.js";
-import { Photographers as Photographer } from "../models/Photographers.js";
+import { PhotographersData } from "../models/Photographers.js";
 import { PhotographersCard } from "../templates/photographerCard.js";
 
 class App {
@@ -8,22 +10,23 @@ class App {
       ".photographer_section",
     );
     this.photographersApi = new PhotographersApi("/data/photographers.json");
-    this.Data = null
-    this.TemplateSolo
+    this.Data = null;
+    this.TemplateSolo;
   }
 
   async init() {
-    const allPhotographersData = await this.photographersApi.getAllPhotographers();
+    const allPhotographersData =
+      await this.photographersApi.getAllPhotographers();
     allPhotographersData
-      .map((photographerData) => new Photographer(photographerData))
+      .map((photographerData) => new PhotographersData(photographerData))
       .forEach((data) => {
         const Template = new PhotographersCard(data);
         this.$photographersSection.appendChild(
           Template.createPhotographersCard(),
         );
       });
-    }
   }
+}
 
 const app = new App();
 app.init();
