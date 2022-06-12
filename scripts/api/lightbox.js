@@ -1,5 +1,3 @@
-/** @format */
-
 /**
  * @property {HTMLElement} element
  * @property {string[]} images chemin des images la lightbox

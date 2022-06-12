@@ -1,5 +1,3 @@
-/** @format */
-
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographerSolo } from "../templates/photographerSolo.js";
 import {Lightbox} from "../api/lightbox.js"
