@@ -1,5 +1,5 @@
 import { PhotographersApi } from "../api/Api.js";
-import { Photographers } from "../models/Photographers.js";
+import { Photographers as Photographer } from "../models/Photographers.js";
 import { PhotographersCard } from "../templates/photographerCard.js";
 
 class App {
@@ -15,7 +15,7 @@ class App {
   async init() {
     const allPhotographersData = await this.photographersApi.getAllPhotographers();
     allPhotographersData
-      .map((photographerData) => new Photographers(photographerData))
+      .map((photographerData) => new Photographer(photographerData))
       .forEach((data) => {
         const Template = new PhotographersCard(data);
         this.$photographersSection.appendChild(
