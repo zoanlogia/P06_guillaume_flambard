@@ -7,7 +7,6 @@ class Api {
   }
 
   async getPhotographers() {
-    
     return fetch(this._url)
       .then((res) => res.json())
       .then((res) => res.data)
@@ -30,7 +29,6 @@ class Api {
       const info = photographerList[i];
       if (info.id == id) {
         detail.info = info;
-        // console.log(info);
       }
     }
 
@@ -38,7 +36,6 @@ class Api {
       const medias = mediaList[i];
       if (medias.photographerId == id) {
         detail.medias.push(medias);
-        // console.log(medias);
       }
     }
     return detail;

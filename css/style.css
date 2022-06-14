@@ -321,7 +321,7 @@ header {
     opacity: 0; }
   .lightbox__next, .lightbox__prev {
     background: white;
-    color: #901C1C;
+    color: #901c1c;
     position: fixed;
     top: 0;
     right: 0;
@@ -342,7 +342,7 @@ header {
     /* transform: rotate(180deg); */ }
   .lightbox__close {
     background-color: transparent !important;
-    color: #901C1C;
+    color: #901c1c;
     border: none;
     position: fixed;
     top: 20px;
@@ -362,6 +362,14 @@ header {
       object-fit: cover;
       max-width: 100%;
       max-height: 100vh; }
+    .lightbox__container h2 {
+      color: #901c1c;
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0; }
   .lightbox__loader {
     position: absolute;
     top: 50%;

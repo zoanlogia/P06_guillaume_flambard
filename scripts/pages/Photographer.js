@@ -3,7 +3,7 @@ import { PhotographerSolo } from "../templates/photographerSolo.js";
 import {Lightbox} from "../api/lightbox.js"
 
 
-class Photographer {
+export class Photographer {
   constructor() {
     this.$photographerSoloSection = document.querySelector(
       ".photographer_solo_section",
@@ -207,7 +207,7 @@ class Photographer {
         break;
       case "popularité":
         medias.sort((a, b) =>
-          a.likes > b.likes ? 1 : a.likes === b.likes ? 0 : -1,
+          a.likes < b.likes ? 1 : a.likes === b.likes ? 0 : -1,
         );
         break;
     }

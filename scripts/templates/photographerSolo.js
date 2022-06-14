@@ -61,7 +61,7 @@ export class PhotographerSolo {
     } else {
       div = document.createElement("div");
       div.classList.add("gallery");
-      div.setAttribute('id', 'gallery')
+      div.setAttribute("id", "gallery");
     }
 
     const medias = mediaToShow ? mediaToShow : this._photographer.medias;
@@ -73,7 +73,7 @@ export class PhotographerSolo {
         dom += `
         <div class="medias-container">
           <a href="../assets/${firstname[0]}/${data.image}">
-            <img src="../assets/${firstname[0]}/${data.image}" alt="image" loading="lazy">
+            <img src="../assets/${firstname[0]}/${data.image}" alt="${data.title}" loading="lazy">
           </a>
           <div class="desc">
             <div>
@@ -88,27 +88,32 @@ export class PhotographerSolo {
         </div>
         `;
       } else {
-        data.title = ((data.video).split('.mp4')[0].replaceAll('_', ' '))
-        dom += `
-        <div class="medias-container">
-          <a href="../assets/${firstname[0]}/${data.video}">
-            <video controls class="video">
-              <source src="../assets/${firstname[0]}/${data.video}" type="video/mp4" loading="lazy">
-            </video>
-          </a>
-          <div class="desc">
-          <div><p>${data.title}</p></div>
-            <div class="heart-container">
-              <span>${data.likes}</span>
-              <span class="icon-full"><i class="icon-full fas fa-heart"></i></span>
-              <span class="icon-empty"><i class="far fa-heart fa-1x"></i></span>
+        const png = data.video.replace("mp4", "png");
+        data.title = data.video.split(".mp4")[0].replaceAll("_", " ");
+        dom +=`
+          <div class="medias-container">
+            <a href="../assets/${firstname[0]}/${data.video}">
+              <img src="../assets/${firstname[0]}/${png}" alt="${data.title}" />
+            </a>
+            <div class="desc">
+              <div><p>${data.title}</p></div>
+              <div class="heart-container">
+                <span>${data.likes}</span>
+                <span class="icon-full"
+                  ><i class="icon-full fas fa-heart"></i
+                ></span>
+                <span class="icon-empty"
+                  ><i class="far fa-heart fa-1x"></i
+                ></span>
+              </div>
             </div>
           </div>
-        </div>
         `;
       }
       div.innerHTML = dom;
     });
+
+
     return div;
   }
 
@@ -129,7 +134,7 @@ export class PhotographerSolo {
         <span class="ttx">${ttx}</span>
         <i class="fas fa-heart"></i>
       </div>
-      <span>${this._photographer.info.price} / jour</span>
+      <span>${this._photographer.info.price} €/ jour</span>
     </div>`;
     return html;
   }

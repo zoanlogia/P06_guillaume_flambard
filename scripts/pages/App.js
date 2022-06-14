@@ -1,6 +1,6 @@
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographersData } from "../models/Photographers.js";
-import { PhotographersCard } from "../templates/photographerCard.js";
+import { PhotographersCard } from "../templates/PhotographerCard.js";
 
 class App {
   constructor() {
