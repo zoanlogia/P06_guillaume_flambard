@@ -1,7 +1,8 @@
+/** @format */
+
 import { PhotographersApi } from "../api/Api.js";
 import { PhotographerSolo } from "../templates/photographerSolo.js";
-import {Lightbox} from "../api/lightbox.js"
-
+import { Lightbox } from "../api/lightbox.js";
 
 export class Photographer {
   constructor() {
@@ -34,7 +35,7 @@ export class Photographer {
     this.myModal();
     this.msgError();
     this.dropBtn();
-    Lightbox.init()
+    Lightbox.init();
   }
 
   likesHandler = () => {
@@ -153,12 +154,14 @@ export class Photographer {
       console.log("RESPONSE :", STATE);
     });
   };
+  
 
   dropBtn = () => {
     const dropdown = document.querySelector(".dropdown");
     const dropBtn = dropdown.querySelector("#dropBtn");
     const myDropdown = dropdown.querySelector("#myDropdown");
     const options = dropdown.querySelectorAll("li.option");
+
 
     options.forEach((option) => {
       option.addEventListener("click", () => {
@@ -194,6 +197,11 @@ export class Photographer {
     const medias = this.Data.medias;
 
     switch (clickedFilter.toLowerCase()) {
+      case "popularité":
+        medias.sort((a, b) =>
+          a.likes < b.likes ? 1 : a.likes === b.likes ? 0 : -1,
+        );
+        break;
       case "date":
         // réécriture de la dropdown
         medias.sort(
@@ -205,21 +213,19 @@ export class Photographer {
           a.title > b.title ? 1 : a.title === b.title ? 0 : -1,
         );
         break;
-      case "popularité":
+      default:
         medias.sort((a, b) =>
           a.likes < b.likes ? 1 : a.likes === b.likes ? 0 : -1,
         );
-        break;
     }
 
     this.$photographerSoloSection.appendChild(
       this.Templatesolo.createGallery(medias),
     );
     this.likesHandler();
-    Lightbox.init()
+    Lightbox.init();
   };
 }
 
 const page = new Photographer();
 page.init();
-

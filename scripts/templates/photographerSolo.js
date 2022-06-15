@@ -1,3 +1,5 @@
+/** @format */
+
 export class PhotographerSolo {
   constructor(photographer) {
     this._photographer = photographer;
@@ -37,7 +39,7 @@ export class PhotographerSolo {
     const content = `
      <p>Trier par</p>
         <div class="dropdown">
-          <button id="dropBtn" class="dropbtn"><span>Popularité</span><i class="fas fa-angle-down margin-left"></i></button>
+          <button id="dropBtn" class="dropbtn"><span>Choisir</span><i class="fas fa-angle-down margin-left"></i></button>
           <ul id="myDropdown" class="dropdown-content option">
             <li class="option">Popularité</li>
             <li class="option">Date</li>
@@ -90,7 +92,7 @@ export class PhotographerSolo {
       } else {
         const png = data.video.replace("mp4", "png");
         data.title = data.video.split(".mp4")[0].replaceAll("_", " ");
-        dom +=`
+        dom += `
           <div class="medias-container">
             <a href="../assets/${firstname[0]}/${data.video}">
               <img src="../assets/${firstname[0]}/${png}" alt="${data.title}" />
@@ -112,7 +114,6 @@ export class PhotographerSolo {
       }
       div.innerHTML = dom;
     });
-
 
     return div;
   }
